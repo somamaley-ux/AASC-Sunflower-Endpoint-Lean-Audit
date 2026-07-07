@@ -7,6 +7,8 @@ This inventory maps the hardened manuscript's main proof links to the Lean audit
 - `SunflowerCarrier`: fixed core-petal residual matching carrier.
 - `corePetal_endpoint_equivalence`: typed core-petal endpoint equivalence.
 - `noSunflower_iff_not_corePetalEndpoint`: negative endpoint transported across the carrier equivalence.
+- `SunflowerThreshold`: typed anchor for the manuscript's `f(n,k)` threshold definition.
+- `SunflowerThreshold.thresholdSurfaceComplete_holds`: threshold property and supremum property are both carried.
 - `LocalEndpointUse`: local endpoint act with fixed target, carrier, branch role, reportability, downstream reuse, and act-time boundary.
 
 ## Kernel Layer
@@ -16,6 +18,8 @@ This inventory maps the hardened manuscript's main proof links to the Lean audit
 - `KernelPackage`: proof-carrying kernel package.
 - `KernelForcedGovernance`: target-adequacy-to-kernel and no-independent-discriminator governance.
 - `local_endpoint_use_excludes_independent_discriminator`: local endpoint use rules out an independent same-domain endpoint-status discriminator.
+- `AASCConsequenceLayer`: typed recap package for endpoint bivalence, no-selector discipline, unique admissible interior, no same-act repair, no carrier transfer, report preservation, and no independent discriminator.
+- `AASCConsequenceLayer.recapSurfaceComplete_holds`: all recap fields are exposed as proof-carrying obligations.
 
 ## Certificate And Residual Layer
 

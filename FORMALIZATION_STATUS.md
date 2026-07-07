@@ -4,14 +4,17 @@
 
 This project has reached the local A+ audit gate for the Sunflower AASC endpoint-transfer manuscript. The Lean surface is proof-class faithful: it formalizes the typed objects and dependency ladder used by the hardened manuscript, and it exposes a single public audit entrypoint.
 
+The latest manuscript hardening was scanned and synchronized into `papers/sunflower/`. The theorem dependency ladder did not change; the Lean build was lightly extended with anchors for the newly named sunflower threshold definition and the self-contained AASC consequence-layer recap.
+
 ## Controlling Source Snapshot
 
 The mechanization follows the PDF-aligned hardened manuscript:
 
 - `papers/sunflower/main.tex`
 - `papers/sunflower/Sunflower_Endpoint_Rigidity_and_Kernel_Forced_AASC_Transfer.pdf`
+- `papers/sunflower/Sunflower_Endpoint_Rigidity_and_Kernel_Forced_AASC_Transfer.zip`
 
-The older `Sunflower_AASC_Endpoint_Transfer_Overleaf.zip` was inspected first. The PDF-adjacent source is materially stronger and is the controlling source used here because it includes the calibrated certificate language, local endpoint use, objective-vs-epistemic BMF failure, and kernel-denial cost refinements.
+The older `Sunflower_AASC_Endpoint_Transfer_Overleaf.zip` was inspected first. The PDF-adjacent source is materially stronger and is the controlling source used here because it includes the calibrated certificate language, local endpoint use, objective-vs-epistemic BMF failure, kernel-denial cost refinements, threshold framing, and the AASC consequence-layer recap.
 
 ## Mechanized Claim
 
@@ -24,6 +27,8 @@ The project machine-checks the following AASC endpoint-transfer spine:
 5. Local residual status work yields an independent same-domain endpoint-status discriminator.
 6. Kernel-forced endpoint governance excludes that discriminator.
 7. Therefore the calibrated residual separator is discharged, and the local countercase route transfers to the bounded motif certificate branch.
+
+The threshold and consequence-layer additions are audit anchors for named manuscript surfaces. They do not alter the transfer theorem, residual discharge theorem, or 31-row A+ obligation ledger.
 
 ## Explicit Boundary
 

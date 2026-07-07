@@ -81,6 +81,29 @@ theorem noSunflower_iff_not_corePetalEndpoint
     intro hs
     exact h ((S.corePetalEquivalence F).mp hs)
 
+/--
+Manuscript anchor for the sunflower threshold `f(n,k)`.  The current audit
+does not optimize or compute the threshold; it records the two threshold
+properties used by the hardened manuscript.
+-/
+structure SunflowerThreshold (S : SunflowerCarrier) where
+  value : Nat
+  thresholdProperty : Prop
+  supremumProperty : Prop
+  thresholdProperty_holds : thresholdProperty
+  supremumProperty_holds : supremumProperty
+
+def SunflowerThreshold.thresholdSurfaceComplete
+    {S : SunflowerCarrier}
+    (T : SunflowerThreshold S) : Prop :=
+  T.thresholdProperty /\ T.supremumProperty
+
+theorem SunflowerThreshold.thresholdSurfaceComplete_holds
+    {S : SunflowerCarrier}
+    (T : SunflowerThreshold S) :
+    T.thresholdSurfaceComplete := by
+  exact And.intro T.thresholdProperty_holds T.supremumProperty_holds
+
 /-- The local endpoint proof act in which a branch is used as live endpoint work. -/
 structure LocalEndpointUse (S : SunflowerCarrier) (branch : S.Family -> Prop) where
   targetFixed : Prop

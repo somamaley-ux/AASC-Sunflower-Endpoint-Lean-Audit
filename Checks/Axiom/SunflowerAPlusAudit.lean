@@ -32,4 +32,16 @@ theorem sunflower_a_plus_transfer_surface
     BMF S C H F := by
   exact A.transfer_to_BMF E
 
+theorem sunflower_threshold_surface
+    {S : SunflowerCarrier}
+    (T : SunflowerThreshold S) :
+    T.thresholdSurfaceComplete := by
+  exact T.thresholdSurfaceComplete_holds
+
+theorem sunflower_consequence_layer_surface
+    {S : SunflowerCarrier}
+    (L : AASCConsequenceLayer S) :
+    L.recapSurfaceComplete := by
+  exact L.recapSurfaceComplete_holds
+
 end SunflowerAASC

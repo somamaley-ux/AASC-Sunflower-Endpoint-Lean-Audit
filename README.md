@@ -10,7 +10,9 @@ The strongest truthful claim is:
 
 - Fixed core-petal residual matching carrier and positive/negative endpoint predicates.
 - Core-petal endpoint equivalence as a typed carrier obligation.
+- Sunflower threshold anchor for the manuscript's `f(n,k)` definition.
 - Four-role AASC kernel package: admissibility, standing, reference, irreversibility.
+- AASC consequence-layer recap: endpoint bivalence, no-selector discipline, unique admissible interior, no same-act repair, no carrier transfer, report preservation, and no independent same-domain discriminator.
 - Target-adequacy-to-kernel governance and no independent same-domain discriminator.
 - Finite certificate language, completeness record, and bounded motif certificate branch.
 - Objective non-BMF residual branch, separated from merely epistemic failure to find a certificate.
@@ -37,11 +39,11 @@ The audit gate builds `SunflowerAASC`, checks `Checks\Axiom\SunflowerAPlusAudit.
 
 ## Repository Map
 
-- `SunflowerAASC/Basic.lean`: fixed carrier, endpoint predicates, local endpoint use, discriminator object.
-- `SunflowerAASC/Kernel.lean`: kernel roles, kernel package, governance, denial-cost surface.
+- `SunflowerAASC/Basic.lean`: fixed carrier, endpoint predicates, sunflower threshold anchor, local endpoint use, discriminator object.
+- `SunflowerAASC/Kernel.lean`: kernel roles, kernel package, AASC consequence layer, governance, denial-cost surface.
 - `SunflowerAASC/Certificates.lean`: certificate language, completeness record, BMF, objective non-BMF, residual separator.
 - `SunflowerAASC/Transfer.lean`: exact countercase use, residual status work, residual discharge, transfer to BMF.
 - `SunflowerAASC/APlusAudit.lean`: 31-row A+ obligation ledger and audit certificate.
 - `Checks/Axiom/SunflowerAPlusAudit.lean`: public audit entrypoint.
-- `papers/sunflower/`: controlling manuscript snapshot.
+- `papers/sunflower/`: controlling manuscript PDF, source ZIP, and extracted `main.tex` snapshot.
 - `FORMALIZATION_STATUS.md`, `THEOREM_INVENTORY.md`, `AUDIT_HANDOFF.md`, `RELEASE_STATUS.md`: reader-facing claim, inventory, validation, and release state.

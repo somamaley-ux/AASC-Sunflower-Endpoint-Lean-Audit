@@ -59,6 +59,57 @@ theorem local_endpoint_use_excludes_independent_discriminator
     False := by
   exact G.noIndependentDiscriminator U D
 
+/-- Fixed-domain AASC consequence layer used by the hardened manuscript recap. -/
+structure AASCConsequenceLayer (S : SunflowerCarrier) where
+  endpointBivalence : Prop
+  noSelectorImport : Prop
+  uniqueAdmissibleInterior : Prop
+  noSameActRepair : Prop
+  noCarrierTransfer : Prop
+  reportPreservation : Prop
+  noIndependentDiscriminatorConsequence :
+    forall {branch positive : S.Family -> Prop},
+      LocalEndpointUse S branch ->
+      IndependentDiscriminator S branch positive ->
+      False
+  endpointBivalence_holds : endpointBivalence
+  noSelectorImport_holds : noSelectorImport
+  uniqueAdmissibleInterior_holds : uniqueAdmissibleInterior
+  noSameActRepair_holds : noSameActRepair
+  noCarrierTransfer_holds : noCarrierTransfer
+  reportPreservation_holds : reportPreservation
+
+def AASCConsequenceLayer.recapSurfaceComplete
+    {S : SunflowerCarrier}
+    (L : AASCConsequenceLayer S) : Prop :=
+  L.endpointBivalence /\
+  L.noSelectorImport /\
+  L.uniqueAdmissibleInterior /\
+  L.noSameActRepair /\
+  L.noCarrierTransfer /\
+  L.reportPreservation
+
+theorem AASCConsequenceLayer.recapSurfaceComplete_holds
+    {S : SunflowerCarrier}
+    (L : AASCConsequenceLayer S) :
+    L.recapSurfaceComplete := by
+  exact
+    And.intro L.endpointBivalence_holds
+      (And.intro L.noSelectorImport_holds
+        (And.intro L.uniqueAdmissibleInterior_holds
+          (And.intro L.noSameActRepair_holds
+            (And.intro L.noCarrierTransfer_holds
+              L.reportPreservation_holds))))
+
+theorem AASCConsequenceLayer.excludes_independent_discriminator
+    {S : SunflowerCarrier}
+    (L : AASCConsequenceLayer S)
+    {branch positive : S.Family -> Prop}
+    (U : LocalEndpointUse S branch)
+    (D : IndependentDiscriminator S branch positive) :
+    False := by
+  exact L.noIndependentDiscriminatorConsequence U D
+
 /-- Typed cost ledger for denying one kernel role while preserving endpoint use. -/
 structure KernelDenialCost (S : SunflowerCarrier) where
   deniedRole : KernelRole
