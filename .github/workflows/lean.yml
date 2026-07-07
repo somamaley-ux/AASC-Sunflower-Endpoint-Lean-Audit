@@ -13,18 +13,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Lean
+      - name: Scan Lean audit surface
         shell: pwsh
         run: |
-          Invoke-WebRequest -Uri https://raw.githubusercontent.com/leanprover/elan/master/elan-init.ps1 -OutFile elan-init.ps1
-          .\elan-init.ps1 -NoPrompt 1 -DefaultToolchain none
-          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          $elanBin = "$env:USERPROFILE\.elan\bin"
-          $env:PATH = "$elanBin;$env:PATH"
-          $elanBin | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
-          elan --version
-          lake --version
+          $ErrorActionPreference = "Stop"
+          $prohibitedPattern = "^\s*(axiom|unsafe)\b|\b(sorry|admit)\b"
+          $scanRoots = @("SunflowerAASC", "Checks\Axiom")
+          $leanFiles = foreach ($root in $scanRoots) {
+            Get-ChildItem -LiteralPath $root -Recurse -Filter "*.lean" -File
+          }
+          $matches = @(
+            $leanFiles |
+            Select-String -Pattern $prohibitedPattern |
+            ForEach-Object { "$($_.Path):$($_.LineNumber):$($_.Line)" }
+          )
+          if ($matches.Count -gt 0) {
+            $matches | ForEach-Object { Write-Host $_ }
+            throw "Prohibited Lean placeholder or escape found in Sunflower audit surface."
+          }
+          Write-Host "No live prohibited declarations or placeholders found in Sunflower audit surface."
 
-      - name: Run Sunflower A+ audit
-        shell: pwsh
-        run: powershell -ExecutionPolicy Bypass -File scripts\check-sunflower-a-plus-audit.ps1
+      - name: Build Lean audit
+        uses: leanprover/lean-action@v1
+        with:
+          use-github-cache: true
