@@ -1,28 +1,35 @@
 # Formalization Status
 
-## Source Snapshot
+## Status
+
+This project has reached the local A+ audit gate for the Sunflower AASC endpoint-transfer manuscript. The Lean surface is proof-class faithful: it formalizes the typed objects and dependency ladder used by the hardened manuscript, and it exposes a single public audit entrypoint.
+
+## Controlling Source Snapshot
 
 The mechanization follows the PDF-aligned hardened manuscript:
 
 - `papers/sunflower/main.tex`
 - `papers/sunflower/Sunflower_Endpoint_Rigidity_and_Kernel_Forced_AASC_Transfer.pdf`
 
-The older `Sunflower_AASC_Endpoint_Transfer_Overleaf.zip` was inspected first, but the PDF-adjacent source is materially stronger and contains the calibrated certificate-language/local-endpoint-use refinements used here.
+The older `Sunflower_AASC_Endpoint_Transfer_Overleaf.zip` was inspected first. The PDF-adjacent source is materially stronger and is the controlling source used here because it includes the calibrated certificate language, local endpoint use, objective-vs-epistemic BMF failure, and kernel-denial cost refinements.
 
-## Mechanized Surface
+## Mechanized Claim
 
-This is an A+ endpoint-transfer mechanization, not an AASC-free classical sunflower proof. It formalizes:
+The project machine-checks the following AASC endpoint-transfer spine:
 
-- fixed core-petal residual matching carrier,
-- target adequacy and four-role kernel package,
-- kernel-forced governance and no independent same-domain discriminator,
-- finite certificate language and completeness record,
-- BMF support branch and objective non-BMF residual branch,
-- exact local countercase use,
-- residual status-work bridge,
-- discharge of the calibrated residual separator,
-- transfer from local countercase use to BMF support under the fixed branch split,
-- 31-row theorem-spine obligation ledger.
+1. The sunflower endpoint is represented on a fixed core-petal residual matching carrier.
+2. Exact local countercase use is not raw objecthood; it is endpoint work on the fixed carrier.
+3. Target adequacy on that nondegenerate endpoint act forces the four-role kernel.
+4. A calibrated certificate language splits the local countercase branch into BMF support or objective non-BMF residual status work.
+5. Local residual status work yields an independent same-domain endpoint-status discriminator.
+6. Kernel-forced endpoint governance excludes that discriminator.
+7. Therefore the calibrated residual separator is discharged, and the local countercase route transfers to the bounded motif certificate branch.
+
+## Explicit Boundary
+
+This repository does **not** claim to mechanize a conventional AASC-free proof of the Erdos-Rado sunflower conjecture from first-principles extremal combinatorics.
+
+It does claim to mechanize, without live `axiom`, `sorry`, `admit`, or `unsafe` declarations in the audit surface, the manuscript's AASC endpoint-transfer mechanism and its A+ theorem-spine ledger.
 
 ## Verification
 

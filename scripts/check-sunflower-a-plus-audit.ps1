@@ -20,20 +20,35 @@ foreach ($auditFile in $auditFiles) {
 Write-Host "Lean toolchain:"
 Get-Content -LiteralPath "lean-toolchain"
 
-$rgArgs = @(
-    "-n",
-    "--glob",
-    "*.lean",
-    $prohibitedPattern
-) + $scanRoots
+$prohibitedMatches = @()
+if (Get-Command rg -ErrorAction SilentlyContinue) {
+    $rgArgs = @(
+        "-n",
+        "--glob",
+        "*.lean",
+        $prohibitedPattern
+    ) + $scanRoots
 
-$prohibitedMatches = & rg @rgArgs
-if ($LASTEXITCODE -eq 0) {
+    $prohibitedMatches = @(& rg @rgArgs)
+    if ($LASTEXITCODE -ne 0 -and $LASTEXITCODE -ne 1) {
+        throw "Prohibited-token scan failed with exit code $LASTEXITCODE."
+    }
+} else {
+    $leanFiles = foreach ($root in $scanRoots) {
+        Get-ChildItem -LiteralPath $root -Recurse -Filter "*.lean" -File
+    }
+    $prohibitedMatches = @(
+        $leanFiles |
+        Select-String -Pattern $prohibitedPattern |
+        ForEach-Object {
+            "$($_.Path):$($_.LineNumber):$($_.Line)"
+        }
+    )
+}
+
+if ($prohibitedMatches.Count -gt 0) {
     $prohibitedMatches | ForEach-Object { Write-Host $_ }
     throw "Prohibited Lean placeholder or escape found in Sunflower audit surface."
-}
-if ($LASTEXITCODE -ne 1) {
-    throw "Prohibited-token scan failed with exit code $LASTEXITCODE."
 }
 Write-Host "No live prohibited declarations or placeholders found in Sunflower audit surface."
 
