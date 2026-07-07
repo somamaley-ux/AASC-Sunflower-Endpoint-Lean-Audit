@@ -30,4 +30,4 @@ It should not be described as a conventional standalone proof of the classical s
 
 ## Release State
 
-No GitHub release has been created. Release work is intentionally held until explicitly requested.
+The repository is prepared for the `v0.1.0` GitHub release from the verified hardened-manuscript commit. The release assets are the manuscript PDF and source ZIP under `papers/sunflower/`.
