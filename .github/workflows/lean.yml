@@ -14,11 +14,11 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Lean
-        uses: leanprover/lean-action@v1
-        with:
-          auto-config: false
-          use-github-cache: true
-          build: false
+        shell: pwsh
+        run: |
+          Invoke-WebRequest -Uri https://raw.githubusercontent.com/leanprover/elan/master/elan-init.ps1 -OutFile elan-init.ps1
+          powershell -ExecutionPolicy Bypass -File elan-init.ps1 -y
+          "$env:USERPROFILE\.elan\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
 
       - name: Run Sunflower A+ audit
         shell: pwsh
