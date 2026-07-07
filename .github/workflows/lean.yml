@@ -17,8 +17,13 @@ jobs:
         shell: pwsh
         run: |
           Invoke-WebRequest -Uri https://raw.githubusercontent.com/leanprover/elan/master/elan-init.ps1 -OutFile elan-init.ps1
-          powershell -ExecutionPolicy Bypass -File elan-init.ps1 -y
-          "$env:USERPROFILE\.elan\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          .\elan-init.ps1 -NoPrompt 1 -DefaultToolchain none
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $elanBin = "$env:USERPROFILE\.elan\bin"
+          $env:PATH = "$elanBin;$env:PATH"
+          $elanBin | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          elan --version
+          lake --version
 
       - name: Run Sunflower A+ audit
         shell: pwsh
