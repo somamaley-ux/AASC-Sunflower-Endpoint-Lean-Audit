@@ -1,0 +1,850 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\input{macros}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{audit}[theorem]{Audit note}
+
+\title{Sunflower Endpoint Rigidity and Kernel-Forced AASC Transfer\\
+\large A Core--Petal Certificate and Residual-Separator Closeout}
+\author{Amos Jay Maley}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This manuscript gives a kernel-forced AASC endpoint-transfer proof for the Erdős--Rado sunflower endpoint relative to a declared-complete finite certificate language \(\calC\) and a calibrated finite motif ceiling \(H_k\ge H_k^{\calC}\).  The proof class is fixed-carrier endpoint transfer: the sunflower endpoint is represented by the core--petal residual matching carrier, a large no-sunflower countercase is routed through a calibrated finite certificate split, and the complete, above-ceiling, objective non-certified residual branch is excluded by the AASC kernel and the no-independent-discriminator consequence layer.  The argument does not attempt to reproduce the random-restriction, spread-lemma, or entropy-compression routes in the current sunflower literature; those are different proof classes and are not correctness standards for the present endpoint proof.
+
+The central hardening is dependency-inversion exclusion.  AASC is not an optional overlay placed on top of a finite set family.  Whenever a raw family is used as a determinate same-carrier counterexample to the sunflower endpoint, the act already fixes target, carrier, branch role, reportability, downstream reuse, act-time finality, and lawful-redescription stability.  Those requirements force the kernel of admissibility, standing, reference, and irreversibility.  Thus a critic may reject the AASC vocabulary, but cannot deny the kernel roles while retaining determinate endpoint-counterexample status for the same object.
+
+The manuscript proves the core--petal equivalence, the finite entropy bound for bounded motif factorization certificates, the object-to-endpoint local countercase bridge, the cost of kernel denial, the BMF-status audit, the calibration of admissible motif ceilings, the local-use theorem for calibrated residual separators, and the AASC exclusion of the calibrated residual reduced-blocker-entropy separator.  Lawful sunflower-free motif structure is preserved below the calibrated ceiling.  Only the complete, above-ceiling, objective non-certified residual branch can enter the no-independent-discriminator closeout.  An AASC-free reconstruction would replace this kernel-forced exclusion by a finite certificate-extraction theorem; that is a separate proof route, not a prerequisite for correctness of the AASC endpoint closeout.
+\end{abstract}
+
+\tableofcontents
+
+\section{Read This First: Proof Spine}
+
+Let \(\calF\subseteq \binom{U}{n}\).  For a candidate core \(C\subseteq U\), define
+\[
+  \calF_C=\{S\setminus C:S\in\calF,\ C\subseteq S\}.
+\]
+The positive endpoint is
+\[
+  \Sun_k(\calF)\iff \exists C\subseteq U\quad \nu(\calF_C)\ge k.
+\]
+The bare negative branch is
+\[
+  \NoSun_k(\calF)\iff \forall C\subseteq U\quad \nu(\calF_C)<k.
+\]
+The core--petal equivalence says that \(\Sun_k(\calF)\) is exactly the existence of a \(k\)-sunflower in \(\calF\).
+
+Fix a finite certificate language \(\calC\) and let \(H_k^{\calC}\) denote its raw certified motif entropy supremum.  The endpoint split is used only after a finite ceiling \(H_k\) has been calibrated so that
+\[
+  H_k\ge H_k^{\calC}<\infty.
+\]
+The finite certificate branch is
+\[
+  \BMF^{\calC}_{k,H_k}(\calF),
+\]
+abbreviated as \(\BMF_{k,H_k}(\calF)\) once \(\calC\) is fixed.  It means that \(\calF\) injects, by an endpoint-preserving finite certificate encoded in \(\calC\), into a product of sunflower-free motif families of entropy density at most \(H_k\).  This branch has the purely combinatorial bound
+\[
+  \BMF_{k,H_k}(\calF)\Rightarrow |\calF|\le e^{H_k n}.
+\]
+The calibrated residual branch is
+\[
+  \RBEsep^{\calC}_{k,H_k}(\calF)
+  \iff
+  \Complete^{\calC}_{k,H_k}
+  \wedge
+  \NoSun_k(\calF)
+  \wedge |\calF|>e^{H_k n}
+  \wedge \neg_{\mathrm{obj}}\BMF^{\calC}_{k,H_k}(\calF),
+\]
+where \(H_k\) is calibrated and the completeness record \(\Complete^{\calC}_{k,H_k}\) is in force for the bounded motif branch.  A too-low ceiling or incomplete certificate language is not a residual separator; it is a miscalibrated endpoint split that must be corrected before the residual branch is eligible for AASC exclusion.
+
+A raw object \(\calF\) is not automatically endpoint use.  However, when \(\calF\) is opened as the live exact-complement countercase in the universal sunflower endpoint proof, it has local endpoint-countercase force.  In that local role, the calibrated \(\RBEsep_{k,H_k}(\calF)\) is not support, bookkeeping, carrier shift, a too-low ceiling, an incomplete certificate language, or certified bounded structure.  It is the same-carrier residual negative status branch after all calibrated bounded certificate routes are removed.
+
+The AASC closeout is local, not a promotion to global negative endpoint resolution:
+\[
+  \RBEsep^{\calC}_{k,H_k}(\calF)\wedge \LocalEndpointUse(\RBEsep^{\calC}_{k,H_k}(\calF))
+  \Rightarrow
+  \IndDisc(\RBEsep^{\calC}_{k,H_k},\Sun_k)
+  \Rightarrow \bot.
+\]
+Thus, with \(\Complete^{\calC}_{k,H_k}\) and calibrated \(H_k\) fixed, a live local countercase satisfying
+\[
+  \NoSun_k(\calF)\wedge |\calF|>e^{H_k n}
+\]
+cannot occupy the calibrated residual branch.  Under the finite branch split internal to that local endpoint proof, \(\BMF^{\calC}_{k,H_k}(\calF)\) is the remaining endpoint-admissible negative route above the calibrated ceiling.  The finite entropy bound for \(\BMF\) then contradicts \(|\calF|>e^{H_k n}\).
+
+\begin{center}
+\fbox{\begin{minipage}{0.92\linewidth}
+\textbf{Fixed proof data.} The endpoint closeout below is evaluated relative to the fixed calibrated proof instance
+\[
+  (\calC,\;\Complete^{\calC}_{k,H_k},\;H_k),
+  \qquad H_k\ge H_k^{\calC}<\infty .
+\]
+All residual-separator claims in the proof are relative to this fixed data.  A branch is not residual merely because no certificate has been displayed, because the ceiling was chosen too low, or because the certificate language has not been completed.
+\end{minipage}}
+\end{center}
+
+\paragraph{Proof-class lock.}
+This is a kernel-forced AASC endpoint-transfer proof.  The kernel is not conditional inside a nondegenerate determinate endpoint object or domain.  An AASC-free reconstruction would replace the kernel-forced exclusion of \(\RBEsep\) by a finite combinatorial certificate-extraction theorem
+\[
+  \NoSun_k(\calF)\Rightarrow \BMF^{\calC}_{k,H_k}(\calF)
+\]
+for a calibrated ceiling \(H_k\ge H_k^{\calC}\).  That reconstruction is a separate proof route.  Its absence is not a defect in the present proof class unless a named AASC theorem link is broken.
+
+\section{Proof-Class Lock and Standing of Objections}
+
+The proof class is kernel-forced endpoint transfer on the fixed core--petal carrier.  It is not a random-restriction argument, a spread-lemma improvement, an entropy-compression proof, a density-increment proof, or a search for a new finite extremal construction.  A demand for one of those methods is a wrong-mode demand unless it identifies a failure in the fixed carrier, endpoint instantiation, kernel forcing, local countercase routing, certificate split, or no-independent-discriminator closeout.
+
+The AASC proof class is not a weakening.  The relevant adequacy conditions are target determinacy, step evaluability, act-time finality, and same-regime fidelity.  Once a branch has determinate same-carrier endpoint or counterexample status, the kernel is already active.  The proof therefore proceeds by endpoint-role exhaustion rather than by constructing a new AASC-free spread estimate.
+
+The role of the entropy ceiling is calibrated, not arbitrary.  The endpoint split is sound only after the bounded motif ceiling is calibrated against the raw certified motifs of the certificate language.  A too-low ceiling misclassifies lawful negative motif structure as residual.  Such a misclassification is a proof error, not an AASC consequence.  The closeout below therefore applies only to calibrated ceilings \(H_k\ge H_k^{\calC}<\infty\).
+
+\begin{definition}[Standing objection]
+An objection has standing against this proof only if it attacks a named proof link: the core--petal carrier, the endpoint equivalence, the target-adequacy-to-kernel theorem, the cost-of-kernel-denial theorem, the exact-countercase bridge, the BMF certificate branch, the local residual separator use theorem, motif-ceiling calibration, the completeness record for the certificate language, the objective non-BMF status-work theorem, or the no-independent-discriminator closeout.  Preference for an AASC-free reconstruction is not a correctness objection to the AASC proof class.
+\end{definition}
+
+\begin{audit}[AASC-free reconstruction]
+A reader may seek an AASC-free reconstruction by proving a finite certificate-extraction theorem for \(\BMF^{\calC}_{k,H_k}\).  That is a separate route.  It becomes relevant to correctness only if the kernel-forced endpoint transfer is first broken.
+\end{audit}
+
+\section{Dependency-Inversion Exclusion}
+
+\subsection{The dependency order}
+
+The dependency order of this manuscript is not
+\[
+  \text{AASC framework}\Rightarrow \text{sunflower constraints}.
+\]
+The dependency order is
+\[
+  \text{determinate same-carrier sunflower counterexample status}
+  \Rightarrow \Kernel
+  \Rightarrow \Aplus.
+\]
+AASC names and audits the forced kernel roles.  It does not supply optional philosophical decoration.
+
+\begin{definition}[Kernel-neutral target adequacy]
+A theorem-bearing endpoint act is target-adequate when it satisfies the following four conditions.
+\begin{enumerate}[label=(A\arabic*)]
+\item \textbf{Target determinacy:} the act has a repeatable object of evaluation, not a presentation-dependent trace.
+\item \textbf{Step evaluability:} its transitions or assertions are evaluable as advancing, blocking, or failing relative to the same target.
+\item \textbf{Act-time finality:} later repair or reclassification is a distinct act, not retrospective standing for the same act.
+\item \textbf{Same-regime fidelity:} lawful redescription preserves target, carrier, branch role, and admissibility status.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Target adequacy forces the kernel]\label{thm:adequacy-kernel}
+If a theorem-bearing endpoint act is target-adequate, then the kernel
+\[
+  \Kernel=\{\Adm,\St,\KRef,\Irr\}
+\]
+is already in force for that act.
+\end{theorem}
+
+\begin{proof}
+Target determinacy is the role later called reference.  Step evaluability is standing-bearing act status.  Act-time finality is irreversibility of failed or inadmissible acts.  Same-regime fidelity is the admissibility boundary preserving the former three roles under lawful redescription.  These are not optional additions; they are the governance roles required for determinate endpoint status.
+\end{proof}
+
+\begin{corollary}[Kernel concession lemma]\label{cor:kernel-concession}
+A critic who preserves determinate target identity, evaluable stephood, act-time distinction between continuation and repair, and same-regime fidelity already preserves the kernel roles, regardless of vocabulary.  A critic who denies any of these conditions no longer preserves determinate same-carrier endpoint use.
+\end{corollary}
+
+\subsection{Counterexample status is not bare objecthood}
+
+A wrong-mode object-only reading says:
+\[
+  \text{a finite counterexample object exists}\Rightarrow \text{the universal theorem is false}.
+\]
+The AASC reply is more precise.  A raw set-family may exist as an object.  To function as a determinate counterexample to the fixed sunflower endpoint, it must be fixed as the same-domain bearer of all relevant predicates:
+\[
+  \calF\subseteq\binom{U}{n},\quad |\calF|>e^{H_k n},\quad
+  \forall C\subseteq U\ \nu(\calF_C)<k.
+\]
+It must also preserve the core--petal carrier, the branch role, reportability, downstream reuse, act-time status, and lawful redescription.  That is governed endpoint-counterexample status.
+
+\begin{definition}[Raw family and endpoint countercase]
+A \emph{raw family} is a set \(\calF\subseteq\binom{U}{n}\) considered as an object.  An \emph{endpoint countercase} is the proof-role use of such a family as the live exact-complement countercase to the endpoint
+\[
+  \exists C\subseteq U\quad \nu(\calF_C)\ge k.
+\]
+\end{definition}
+
+\begin{theorem}[Object-to-countercase bridge]\label{thm:object-countercase}
+A raw family is not automatically endpoint use.  However, if a family \(\calF\) is opened inside the proof of the universal sunflower endpoint as the live exact countercase satisfying
+\[
+  |\calF|>e^{H_k n}\quad\text{and}\quad \NoSun_k(\calF),
+\]
+then that local proof act has endpoint-countercase force on the fixed core--petal carrier.
+\end{theorem}
+
+\begin{proof}
+The assumption is not inert syntax.  It is the branch whose survival would block the desired endpoint conclusion for the same carrier.  It fixes the target, the carrier \(\binom{U}{n}\), the residual-core map \(C\mapsto\calF_C\), the branch role \(\NoSun_k\), and the size-excess condition.  Therefore it is a local endpoint-countercase act.  This does not promote every raw object to endpoint use; it classifies only the exact local countercase being discharged.
+\end{proof}
+
+
+\begin{definition}[Local endpoint use]
+For a branch predicate \(B(\calF)\), \(\LocalEndpointUse(B(\calF))\) means that \(B(\calF)\) is used inside a governed local proof act as the exact endpoint-countercase to the fixed positive endpoint.  It fixes the same target, carrier, branch role, local countercase force, act-time status, and lawful-redescription role inside the subproof.  It does not assert global official negative endpoint resolution.
+\end{definition}
+
+\begin{theorem}[Local residual separator use is local endpoint use]\label{thm:local-RBE-use}
+If \(\calF\) is opened as the live exact countercase to the fixed sunflower endpoint and \(\RBEsep^{\calC}_{k,H_k}(\calF)\) holds, then
+\[
+  \LocalEndpointUse(\RBEsep^{\calC}_{k,H_k}(\calF)).
+\]
+\end{theorem}
+
+\begin{proof}
+The residual separator is not the raw family considered in isolation.  It is the local proof-role use of the family under the branch
+\[
+  \NoSun_k(\calF)\wedge |\calF|>e^{H_k n}\wedge \neg_{\mathrm{obj}}\BMF^{\calC}_{k,H_k}(\calF).
+\]
+By the object-to-countercase bridge, the opened family has local endpoint-countercase force against \(\Sun_k\).  The residual separator fixes the exact negative role by which the positive core--petal occupation endpoint is resisted after the certified branch has been removed.  That is local endpoint use of the residual branch.  No global negative endpoint outcome is inferred.
+\end{proof}
+
+\begin{audit}[No dependency inversion]
+The objection ``a counterexample only has to exist'' is not kernel-neutral once the object is used as a determinate same-carrier counterexample.  The relevant status is not mere objecthood but object-as-counterexample-to-this-endpoint.  That status requires the kernel roles.
+\end{audit}
+
+
+\section{Cost of Kernel Denial}
+
+A denial of the kernel is not consequence-free.  The kernel is not a framework condition imposed after the sunflower endpoint has already become determinate.  It is the role-structure already required for any object, family, proof act, counterexample use, or endpoint report to have determinate same-domain status at all.
+
+The fixed sunflower endpoint requires the following object to remain determinate:
+\[
+  \calF\subseteq\binom{U}{n},\qquad
+  C\mapsto \calF_C,\qquad
+  \nu(\calF_C),\qquad
+  \exists C\subseteq U\ \nu(\calF_C)\ge k.
+\]
+A purported counterexample must likewise remain determinate as the same-carrier negative branch:
+\[
+  |\calF|>c_k^n
+  \quad\wedge\quad
+  \forall C\subseteq U\ \nu(\calF_C)<k.
+\]
+That status is not raw sethood.  It requires fixed target, fixed carrier, fixed endpoint predicate, stable branch role, and a distinction between endpoint-bearing use, support, bookkeeping, carrier shift, selector import, and later repair.  Those are exactly the kernel roles.
+
+\begin{theorem}[Cost of kernel denial]\label{thm:cost-kernel-denial}
+Let the sunflower endpoint be treated as a nondegenerate determinate same-carrier endpoint object.  Then removing or weakening any member of
+\[
+  \Kernel=\{\Adm,\St,\KRef,\Irr\}
+\]
+does not preserve the same endpoint with fewer constraints.  It changes or destroys the determinate status of the endpoint object or the counterexample branch.
+\end{theorem}
+
+\begin{proof}
+If reference is removed, then the symbols \(\calF,U,n,C,\calF_C,\nu(\calF_C)\) no longer have stabilized target relation.  The branch may silently shift among uniform, nonuniform, weighted, ordered, probabilistic, factorized, or surrogate carriers.  That is loss of the fixed endpoint object.
+
+If standing is removed, then \(\forall C\,\nu(\calF_C)<k\) may remain raw content, syntax, support, or a local obstruction, but it cannot carry theorem-bearing or counterexample-bearing force, cannot license downstream reuse, and cannot defeat the positive endpoint.
+
+If admissibility is removed, then there is no fixed boundary separating endpoint-bearing branch, support-only information, bookkeeping, carrier shift, selector import, repair, and lawful finite certificate.  Nonstanding selectors, preferred blockers, chosen core orders, random weightings, approximate-factorization thresholds, or canonical representatives could then decide endpoint status without being part of the fixed carrier.
+
+If irreversibility is removed, then failed or uncertified endpoint acts may be repaired later while being treated as the same act.  Deferred certification, later factorization, post hoc carrier correction, and retrospective endpoint reclassification would erase the distinction between admissible continuation and repair.
+
+Thus a critic who preserves fixed target, carrier, branch role, reportability, downstream reuse, lawful redescription, and act-time finality has already preserved the kernel roles.  A critic who denies one of them no longer preserves the same nondegenerate endpoint object.
+\end{proof}
+
+\begin{center}
+\begin{tabular}{p{0.26\linewidth}p{0.62\linewidth}}
+\toprule
+Kernel role denied & Cost \\
+\midrule
+Reference & No fixed endpoint object, carrier, residual-core map, or branch target. \\
+Standing & No theorem-bearing or counterexample-bearing force; no licensed endpoint reuse. \\
+Admissibility & No boundary between endpoint, support, bookkeeping, selector import, certificate branch, repair, and carrier shift. \\
+Irreversibility & Same-act repair, deferred certification, and retrospective reclassification reopen. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{corollary}[No third position]\label{cor:no-third-kernel}
+There is no position from which one may reject the kernel and still use \(\calF\) as a determinate same-carrier counterexample to the fixed sunflower endpoint.  Either the endpoint and counterexample status remain nondegenerate, in which case the kernel is already active, or one of the costs above is paid and the same endpoint status is lost.
+\end{corollary}
+
+\begin{audit}[Residual separator consequence]
+The residual branch \(\RBEsep_{k,H_k}(\calF)\) is not excluded because AASC is externally imposed.  If it is raw syntax, it has no endpoint force.  If it is support, it does not defeat the endpoint.  If it changes carrier, it is not the same sunflower endpoint.  If it waits for later certification, it is not the same act.  If it stands as the negative endpoint branch on the fixed carrier, then the kernel is already active and the no-independent-discriminator consequence applies.
+\end{audit}
+
+\section{Core--Petal Residual Matching Carrier}
+
+\begin{definition}[Sunflower]
+A \(k\)-sunflower in \(\calF\) is a collection of distinct sets \(S_1,\dots,S_k\in\calF\) such that
+\[
+  S_i\cap S_j=C\qquad (i\ne j)
+\]
+for some fixed core \(C\subseteq U\).
+\end{definition}
+
+\begin{definition}[Residual petal family]
+For \(C\subseteq U\), define
+\[
+  \calF_C=\{S\setminus C:S\in\calF,\ C\subseteq S\}.
+\]
+Let \(\nu(\calF_C)\) be the matching number of \(\calF_C\).
+\end{definition}
+
+\begin{proposition}[Core--petal endpoint equivalence]\label{prop:corepetal}
+For every \(n\)-uniform family \(\calF\),
+\[
+  \calF\text{ contains a }k\text{-sunflower}
+  \Longleftrightarrow
+  \exists C\subseteq U\quad \nu(\calF_C)\ge k.
+\]
+\end{proposition}
+
+\begin{proof}
+If \(S_1,\dots,S_k\) form a sunflower with core \(C\), then the petals \(P_i=S_i\setminus C\) are pairwise disjoint members of \(\calF_C\).  Hence \(\nu(\calF_C)\ge k\).
+
+Conversely, if \(P_1,
+\dots,P_k\in\calF_C\) are pairwise disjoint, then each \(P_i=S_i\setminus C\) for some \(S_i\in\calF\) containing \(C\).  Pairwise disjointness gives \(S_i\cap S_j=C\) for \(i\ne j\), so the \(S_i\) form a \(k\)-sunflower.
+\end{proof}
+
+\begin{definition}[Endpoint branches]
+The positive endpoint is
+\[
+  \Sun_k(\calF)\iff \exists C\subseteq U\quad \nu(\calF_C)\ge k.
+\]
+The bare negative branch is
+\[
+  \NoSun_k(\calF)\iff \forall C\subseteq U\quad \nu(\calF_C)<k.
+\]
+\end{definition}
+
+\section{Minimal Counterexamples and Spread}
+
+This section records the standard spread reduction, included to show that the AASC endpoint branch is not merely the raw sunflower-free condition.
+
+\begin{definition}[Spread]
+Let \(q>1\).  A family \(\calF\subseteq\binom{U}{n}\) is \(q\)-spread if for every nonempty \(T\subseteq U\),
+\[
+  d_{\calF}(T)\defeq |\{S\in\calF:T\subseteq S\}|
+  \le q^{-|T|}|\calF|.
+\]
+\end{definition}
+
+\begin{lemma}[Minimal counterexamples are spread]\label{lem:min-spread}
+Fix \(q>1\).  Suppose \(\calF\subseteq\binom{U}{n}\) is \(k\)-sunflower-free, \(|\calF|>q^n\), and \(n\) is minimal among all such counterexamples to the bound \(q^m\).  Then \(\calF\) is \(q\)-spread.
+\end{lemma}
+
+\begin{proof}
+If some nonempty \(T\subseteq U\) has
+\[
+  d_{\calF}(T)>q^{-|T|}|\calF|,
+\]
+then, since \(|\calF|>q^n\),
+\[
+  d_{\calF}(T)>q^{n-|T|}.
+\]
+The link
+\[
+  \calF_T=\{S\setminus T:S\in\calF,\ T\subseteq S\}
+\]
+is \((n-|T|)\)-uniform, has size \(d_{\calF}(T)>q^{n-|T|}\), and is sunflower-free because a sunflower in \(\calF_T\) lifts to one in \(\calF\).  This contradicts minimality of \(n\).
+\end{proof}
+
+
+\section{Bounded Motif Factorization Certificates}
+
+The phrase ``lawful motif'' cannot remain an informal status.  It is replaced here by a finite certificate language.  The language is a grammar for finite records, not a finite catalogue of all motifs.  The crucial separation is between raw motif certification and bounded motif certification.  A raw motif certificate records sunflower-freeness on a finite same-carrier motif.  The entropy ceiling is applied only after the raw motif class has been fixed and calibrated.
+
+\begin{definition}[Certificate language]
+A certificate language \(\calC\) is a fixed finite grammar for finite records.  Its primitive record types are:
+\begin{enumerate}[label=(\roman*)]
+\item raw motif records \((r,V,\calH,\pi_{\NoSun})\), where \(1\le r<\infty\), \(\calH\subseteq\binom Vr\), and \(\pi_{\NoSun}\) is a finite same-carrier certificate that \(\calH\) is \(k\)-sunflower-free;
+\item product records \(\calH_1\boxtimes\cdots\boxtimes\calH_m\);
+\item injection records \(\Phi:\calF\hookrightarrow \calH_1\boxtimes\cdots\boxtimes\calH_m\);
+\item endpoint-preservation records proving that any sunflower in the image of \(\Phi\) pulls back to a sunflower in \(\calF\);
+\item rank-accounting records proving \(\sum_i r_i\le n\);
+\item entropy-accounting records proving \(\prod_i |\calH_i|\le e^{H_k n}\) after the ceiling \(H_k\) has been calibrated.
+\end{enumerate}
+The language is extensible.  Adding a new finite bounded certificate form enlarges the certified branch and shrinks the residual branch.  No unencoded bounded certificate is silently ignored; it is either added to \(\calC\), treated as support pending explicit encoding, or recorded as certificate-language incompleteness rather than as residual endpoint work.
+\end{definition}
+
+\begin{definition}[Raw motif certification]
+Write
+\[
+  \RawMotif^{\calC}_{k}(\calH)
+\]
+when \(\calC\) contains a raw motif record \((r,V,\calH,\pi_{\NoSun})\) certifying that \(\calH\subseteq\binom Vr\) is a finite same-carrier \(k\)-sunflower-free motif of rank \(r\).  The entropy density of a raw motif is computed externally by
+\[
+  \eta(\calH)\defeq \frac1r\log|\calH|.
+\]
+Raw motif certification contains no entropy ceiling.  It records only finite carrier, uniform rank, sunflower-free status, and same-carrier validity.
+\end{definition}
+
+\begin{definition}[Completeness record]
+Let \(H_k\) be a calibrated entropy ceiling.  A completeness record
+\[
+  \Complete^{\calC}_{k,H_k}
+\]
+is a finite metacertificate for the proof instance: it records the declared certificate grammar \(\calC\), the calibrated ceiling \(H_k\), and the route-locus classification for bounded same-carrier negative support.  It means that the certificate language \(\calC\) has been fixed for the proof and every finite same-carrier negative structure used as endpoint-relevant support for a no-sunflower branch of entropy density at most \(H_k\) is classified in exactly one of the following ways:
+\begin{enumerate}[label=(\roman*)]
+\item it is encoded as a bounded motif factorization certificate \(\BMF^{\calC}_{k,H_k}\);
+\item it is endpoint-inert support;
+\item it is bookkeeping;
+\item it is a carrier shift;
+\item it is deferred repair or later certification, hence a new act rather than the same endpoint act;
+\item it is an unencoded bounded certificate, in which case \(\Complete^{\calC}_{k,H_k}\) is not yet available and \(\calC\) must be extended before the endpoint split is treated as complete.
+\end{enumerate}
+Objective non-BMF may be routed to the residual separator only in the presence of \(\Complete^{\calC}_{k,H_k}\) and a calibrated ceiling.  Otherwise, failure of \(\BMF^{\calC}_{k,H_k}\) may reflect an incomplete certificate language rather than a residual endpoint branch.
+The existence of \(\Complete^{\calC}_{k,H_k}\) is fixed proof-instance data.  It is not inferred from AASC vocabulary, not generated by residual-separator discharge, and not a substitute for the finite route-locus record it names.
+\end{definition}
+
+\begin{definition}[Bounded motif certificate]
+Fix \(k\ge3\), a calibrated ceiling \(H_k\), and a certificate language \(\calC\).  A bounded motif certificate is a raw motif \(\calH\) with \(\RawMotif^{\calC}_{k}(\calH)\) and
+\[
+  \eta(\calH)=\frac1{\Rank(\calH)}\log|\calH|\le H_k.
+\]
+Thus boundedness is a check on a raw certified motif, not part of the raw motif status itself.
+\end{definition}
+
+\begin{definition}[Tensor product]
+For disjoint carriers, define
+\[
+  \calH_1\boxtimes\cdots\boxtimes\calH_m
+  =\{H_1\cup\cdots\cup H_m:H_i\in\calH_i\}.
+\]
+\end{definition}
+
+\begin{definition}[Bounded motif factorization certificate]
+A bounded motif factorization certificate for \(\calF\) at calibrated entropy level \(H_k\) in certificate language \(\calC\), written \(\BMF^{\calC}_{k,H_k}(\calF)\), is a finite record
+\[
+  \Xi=(\calH_1,\dots,\calH_m,\Phi,\rho)
+\]
+where each \(\calH_i\) is a bounded motif certificate in \(\calC\), the carriers are disjoint after harmless renaming,
+\[
+  \Phi:\calF\hookrightarrow \calH_1\boxtimes\cdots\boxtimes\calH_m
+\]
+is injective, and \(\rho\) certifies:
+\begin{enumerate}[label=(\roman*)]
+\item endpoint preservation: any \(k\)-sunflower in \(\Phi(\calF)\) pulls back to one in \(\calF\);
+\item rank accounting: \(\sum_i \Rank(\calH_i)\le n\);
+\item entropy accounting: \(\prod_i|\calH_i|\le e^{H_k n}\);
+\item no carrier shift, no hidden selector, no deferred repair, and no external evaluator in the endpoint-bearing part of \(\Phi\).
+\end{enumerate}
+When \(\calC\) is fixed throughout a section, we abbreviate \(\BMF^{\calC}_{k,H_k}\) as \(\BMF_{k,H_k}\).
+\end{definition}
+
+\begin{proposition}[Certified branches are exponentially bounded]\label{prop:BMF-bound}
+If \(\BMF^{\calC}_{k,H_k}(\calF)\), then
+\[
+  |\calF|\le e^{H_k n}.
+\]
+\end{proposition}
+
+\begin{proof}
+Injectivity gives
+\[
+  |\calF|\le \prod_i |\calH_i|.
+\]
+For each \(i\), bounded motif certification gives \(|\calH_i|\le e^{H_k\Rank(\calH_i)}\), and the rank-accounting record gives \(\sum_i\Rank(\calH_i)\le n\).  Hence
+\[
+  |\calF|\le \prod_i e^{H_k\Rank(\calH_i)}
+  =e^{H_k\sum_i\Rank(\calH_i)}
+  \le e^{H_k n}.
+\]
+\end{proof}
+
+
+\section{Motif Calibration and Non-Exclusion of Lawful Negative Structure}
+
+The entropy ceiling is not arbitrary.  The AASC closeout excludes only the calibrated residual excess branch above the lawful raw motif ceiling of the fixed certificate language.  It does not exclude lawful sunflower-free motifs whose entropy density lies below the calibrated ceiling, and it does not treat a too-low ceiling as an AASC consequence.
+
+\begin{definition}[Raw certified motif entropy ceiling]
+For a fixed certificate language \(\calC\), define
+\[
+  H_k^{\calC}
+  :=
+  \sup\left\{
+  \eta(\calH):
+  \RawMotif^{\calC}_{k}(\calH)
+  \right\},
+  \qquad
+  \eta(\calH)=\frac1{\Rank(\calH)}\log|\calH|.
+\]
+A ceiling \(H_k\) is admissible for \(\calC\) only when
+\[
+  H_k\ge H_k^{\calC}.
+\]
+If \(H_k<H_k^{\calC}\), then the endpoint split is miscalibrated: it classifies lawful negative motif structure as residual.  That is a proof error, not an AASC consequence.  If \(H_k^{\calC}=\infty\), the chosen certificate language does not yield an exponential certified branch and cannot support a finite endpoint ceiling until the certificate language is refined.
+\end{definition}
+
+\begin{proposition}[Product-transversal calibration]
+For every \(k\ge3\), any valid calibrated ceiling satisfies
+\[
+  H_k\ge \log(k-1).
+\]
+\end{proposition}
+
+\begin{proof}
+Let \(U=[n]\times[k-1]\), and let \(\calT_{n,k}\) be the family of all transversals
+\[
+  S_f=\{(i,f(i)):1\le i\le n\},\qquad f:[n]\to[k-1].
+\]
+Then \(|\calT_{n,k}|=(k-1)^n\).  The family is \(k\)-sunflower-free: at each coordinate, \(k\) distinct petals would require \(k\) distinct values, but only \(k-1\) values are available; hence any sunflower would force all selected transversals to agree in every coordinate.  Thus product transversals are lawful negative motif structure, not residual separators.  Their entropy density is \(\log(k-1)\), so a calibrated ceiling must be at least this large whenever the product-transversal motif is recognized by \(\calC\).
+\end{proof}
+
+\begin{proposition}[Cycle-motif calibration for \(k=3\)]
+For \(k=3\), any calibrated ceiling for a certificate language recognizing the \(5\)-cycle motif satisfies
+\[
+  H_3\ge \frac12\log 5.
+\]
+\end{proposition}
+
+\begin{proof}
+Let \(\calC_5\) be the edge family of the cycle graph \(C_5\), regarded as a \(2\)-uniform family.  It has no \(3\)-sunflower: a \(3\)-sunflower in a graph edge family is either three disjoint edges or a \(3\)-star, while \(C_5\) has matching number \(2\) and maximum degree \(2\).  Tensor powers \(\calC_5^{\boxtimes m}\) are \(3\)-sunflower-free, have rank \(2m\), and have size \(5^m\).  Their entropy density is \(\frac12\log 5\).  These motifs are lawful negative structure once recognized by \(\calC\); they cannot be routed to the residual separator by choosing a lower ceiling.
+\end{proof}
+
+\begin{definition}[Calibrated residual branch]
+Let \(\Complete^{\calC}_{k,H_k}\) hold and let \(H_k\ge H_k^{\calC}<\infty\).  The calibrated residual branch is the conjunction of completeness, no sunflower, size above the calibrated ceiling, and objective failure of the complete bounded certificate branch:
+\[
+  \RBEsep^{\calC}_{k,H_k}(\calF)
+  \iff
+  \Complete^{\calC}_{k,H_k}
+  \wedge
+  \NoSun_k(\calF)
+  \wedge
+  |\calF|>e^{H_k n}
+  \wedge
+  \neg_{\mathrm{obj}}\BMF^{\calC}_{k,H_k}(\calF).
+\]
+Only this calibrated residual branch is eligible for the AASC no-independent-discriminator closeout.
+\end{definition}
+
+\begin{audit}[Non-exclusion of lawful negative structure]
+The AASC closeout does not reject product transversals, cycle motifs, or any other bounded certified sunflower-free family.  Such families are lawful negative structures at or below the calibrated ceiling.  The excluded object is narrower: a family above the calibrated ceiling, in a complete certificate language, with objective absence of any bounded certificate, used as a determinate same-carrier local endpoint countercase.  The object-level certificate branch is not constructed by the residual-separator discharge; rather, the calibrated residual countercase is locally discharged, leaving the certified branch as the only endpoint-admissible negative route above the calibrated ceiling.
+\end{audit}
+
+\section{BMF Status Audit and Objective Certificate Failure}
+
+The bounded motif factorization predicate is a finite certificate predicate.  It is not a second endpoint gate and does not create endpoint standing.
+
+\begin{definition}[Objective and epistemic certificate failure]
+Write
+\[
+  \neg_{\mathrm{obj}}\BMF^{\calC}_{k,H_k}(\calF)
+\]
+for the object-level claim that no bounded motif factorization certificate in the fixed language \(\calC\) exists for \(\calF\).  Write
+\[
+  \neg_{\mathrm{known}}\BMF^{\calC}_{k,H_k}(\calF)
+\]
+for the epistemic state that no such certificate has been supplied or found.
+Only \(\neg_{\mathrm{obj}}\BMF^{\calC}\) can enter the residual separator.  Epistemic certificate failure is inert for endpoint purposes.  The superscript \(\calC\) is omitted below only when the certificate language is fixed.
+\end{definition}
+
+\begin{lemma}[BMF is support, not endpoint authority]\label{lem:BMF-support}
+If \(\BMF_{k,H_k}(\calF)\) holds, it supplies finite entropy support for bounding \(|\calF|\).  It does not create sunflower endpoint standing, does not alter the core--petal carrier, and does not decide \(\Sun_k(\calF)\) by an independent endpoint-status rule.
+\end{lemma}
+
+\begin{proof}
+The certificate consists of finite motifs, an injective map, endpoint preservation, rank accounting, and entropy accounting.  Its only endpoint-facing consequence is the support-level implication of Proposition~\ref{prop:BMF-bound}.  It does not replace the positive endpoint \(\exists C\,\nu(\calF_C)\ge k\), does not create a second positive branch, and does not provide counterexample standing.  Hence it is admissible certificate support, not endpoint-status authority.
+\end{proof}
+
+\begin{theorem}[BMF split is support-level until residual countercase use]\label{thm:BMF-split-support}
+The split
+\[
+  \BMF^{\calC}_{k,H_k}(\calF)\vee \neg_{\mathrm{obj}}\BMF^{\calC}_{k,H_k}(\calF)
+\]
+is not an endpoint gate by itself.  The positive branch is finite certificate support.  The objective negative branch is not endpoint-status work by itself.  It becomes endpoint-status work only when combined with \(\NoSun_k(\calF)\), size excess, and local exact-countercase use of the residual branch.
+\end{theorem}
+
+\begin{proof}
+The predicate \(\BMF^{\calC}_{k,H_k}\) records whether a finite certificate exists in the fixed language.  If it holds, Lemma~\ref{lem:BMF-support} shows that it supplies support and entropy accounting, not endpoint authority.  If the objective negation holds without local endpoint-countercase use, it is a structural fact about the absence of that certificate and carries no endpoint force.  When it is joined to \(\NoSun_k\), size excess, and the exact residual countercase role, it becomes the assertion that the negative branch may stand without positive occupation and without the certified bounded route.  Only that last role is endpoint-status work.
+\end{proof}
+
+\begin{theorem}[Objective non-BMF under exact countercase use is status work]\label{thm:nonBMF-status}
+Fix \(\calC\), let \(\Complete^{\calC}_{k,H_k}\) hold, and let \(H_k\ge H_k^{\calC}<\infty\).  Assume \(\calF\) is opened as the live exact countercase to the fixed sunflower endpoint and satisfies
+\[
+  \NoSun_k(\calF)\wedge |\calF|>e^{H_k n}\wedge \neg_{\mathrm{obj}}\BMF^{\calC}_{k,H_k}(\calF).
+\]
+Then the objective non-BMF clause is not inert absence of proof.  In that proof-role context it is endpoint-admissibility-relevant: it asserts that the negative branch may stand without positive core--petal occupation and without a finite bounded certificate branch in the complete calibrated certificate language.
+\end{theorem}
+
+\begin{proof}
+The epistemic condition that no certificate has been found carries no endpoint force.  The theorem concerns the object-level claim that no certificate exists.  In the exact countercase proof role, the family is being used to block the endpoint while exceeding the entropy ceiling.  The BMF branch is the only certified bounded branch remaining after support, bookkeeping, and carrier shift are removed.  Therefore the objective non-BMF clause is the assertion that the negative branch retains endpoint counterforce without the bounded certificate route.  Removing that clause changes the endpoint role: the family could be bounded by Proposition~\ref{prop:BMF-bound}.  Keeping it lets the negative branch stand as an uncertified excess branch.  That is endpoint-admissibility-relevant status work, not a mere epistemic absence.
+\end{proof}
+
+\begin{theorem}[Residual sunflower separator is not arbitrary negation]\label{thm:not-arbitrary-negation}
+The residual separator is not a generic instance of \(\neg P\).  Its content is the specific same-carrier global non-occupation statement
+\[
+  \forall C\subseteq U\quad \nu(\calF_C)<k
+\]
+together with size excess and objective failure of the finite bounded certificate branch.  Under exact endpoint-countercase use, it asserts same-domain negative standing for global non-occupation of every core--petal role-cardinality slot.
+\end{theorem}
+
+\begin{proof}
+A generic negation has no specified endpoint image.  Here the positive endpoint has the fixed tensor form \((C;P_1,\dots,P_k)\), where the \(P_i\in\calF_C\) are pairwise disjoint.  The negative branch says that every such role-cardinality slot is unoccupied.  The residual branch adds that this non-occupation exceeds the entropy ceiling and cannot be routed through a bounded finite certificate.  This is a special core--petal status claim on the fixed carrier; it is not arbitrary negation.
+\end{proof}
+
+\begin{audit}[BMF/non-BMF split]
+The split \(\BMF\vee\neg_{\mathrm{obj}}\BMF\) is not itself an endpoint gate.  The positive BMF branch is finite support.  The objective non-BMF clause becomes endpoint-status work only when combined with size excess, no-sunflower content, and exact countercase use.  This prevents the proof from relying on the same kind of independent classifier it excludes.
+\end{audit}
+
+\section{Residual Separator and Endpoint Transfer}
+
+The residual branch used below is always calibrated.  Fix a certificate language \(\calC\), a completeness record \(\Complete^{\calC}_{k,H_k}\), and an admissible finite ceiling \(H_k\ge H_k^{\calC}<\infty\).  When \(\calC\) is fixed, write \(\RBEsep_{k,H_k}\) for \(\RBEsep^{\calC}_{k,H_k}\).
+
+\begin{proposition}[Calibrated countercase branch split]
+\label{prop:countercase-dichotomy}
+If \(\Complete^{\calC}_{k,H_k}\), \(\NoSun_k(\calF)\), and \(|\calF|>e^{H_k n}\), then the local proof splits into the certified branch
+\[
+  \BMF^{\calC}_{k,H_k}(\calF)
+\]
+and the objective non-certified branch.  The certified branch is immediately incompatible with the size-excess hypothesis by Proposition~\ref{prop:BMF-bound}.  The non-certified branch is precisely the calibrated residual separator
+\[
+  \RBEsep^{\calC}_{k,H_k}(\calF).
+\]
+\end{proposition}
+
+\begin{proof}
+The branch split is excluded middle on \(\BMF^{\calC}_{k,H_k}(\calF)\).  If \(\BMF^{\calC}_{k,H_k}(\calF)\), then Proposition~\ref{prop:BMF-bound} gives \(|\calF|\le e^{H_k n}\), contradicting the size-excess hypothesis.  If \(\neg_{\mathrm{obj}}\BMF^{\calC}_{k,H_k}(\calF)\), then the calibrated residual branch holds by definition.  Ceiling miscalibration, language incompleteness, epistemic non-certification, support, bookkeeping, and carrier shift are not part of this residual branch; they are handled by the route-locus audit below.
+\end{proof}
+
+\begin{center}
+\begin{tabular}{p{0.34\linewidth}p{0.56\linewidth}}
+\toprule
+Route & Disposition\\
+\midrule
+\(\BMF^{\calC}_{k,H_k}(\calF)\) & Finite certificate support; entropy bound by Proposition~\ref{prop:BMF-bound}.\\
+Ceiling too low, \(H_k<H_k^{\calC}\) & Miscalibrated endpoint split; raise \(H_k\).  Not residual separator work.\\
+Unencoded bounded certificate & Extend \(\calC\) or treat as support pending encoding.  Not residual endpoint work.\\
+Incomplete certificate language & Residual status is not triggered until the completeness record \(\Complete^{\calC}_{k,H_k}\) is available.\\
+Epistemic non-certification & Inert: no certificate has been found, but objective nonexistence has not been established.\\
+Support-only no-sunflower information & No endpoint countercase force.\\
+Bookkeeping or skin & No endpoint-status work.\\
+Carrier shift & Not the same core--petal endpoint carrier.\\
+Deferred repair or later certificate & New act, not same local endpoint act.\\
+\(\Complete^{\calC}_{k,H_k}\), calibrated \(H_k\), objective non-BMF, exact countercase use & Calibrated residual separator; same-carrier endpoint-status work controlled by AASC.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{theorem}[Residual separator induces local endpoint-status work]\label{thm:RBE-status}
+When \(\calF\) is opened as the live exact countercase in the universal sunflower endpoint proof, \(\RBEsep^{\calC}_{k,H_k}(\calF)\) performs local endpoint-status work on the fixed core--petal carrier.
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:object-countercase}, the opened family has local endpoint-countercase force.  By Theorem~\ref{thm:not-arbitrary-negation}, the branch is not generic negation but global non-occupation of every core--petal role-cardinality slot, plus size excess and objective non-BMF.  The residual separator is not support-only, because it is the branch by which the positive endpoint is resisted.  It is not bookkeeping, because removing either the size-excess clause or the objective non-BMF clause changes the alleged countercase force.  The objective non-BMF component is endpoint-admissibility-relevant by Theorem~\ref{thm:nonBMF-status}.  It is not a carrier shift, because the carrier remains \(\calF\subseteq\binom{U}{n}\) and the endpoint remains \(\exists C\,\nu(\calF_C)\ge k\).  It is not a bounded motif certificate branch, by definition.  Thus it is the remaining same-carrier negative status branch after certified, too-low-ceiling, certificate-language-incompleteness, support, bookkeeping, epistemic, and carrier-shift routes are removed.  That is endpoint-status work.
+\end{proof}
+
+\section{AASC Exclusion of the Residual Separator}
+
+\begin{theorem}[Local endpoint use yields no independent discriminator]\label{thm:no-ind-disc}
+For a fixed nondegenerate endpoint carrier, local or global endpoint use excludes independent same-domain endpoint-status discriminators on that carrier.
+\end{theorem}
+
+\begin{proof}
+Local endpoint use is target-adequate within the governed subproof; by Theorem~\ref{thm:adequacy-kernel}, the kernel is already active for that local endpoint act.  On a fixed domain, the AASC consequence layer gives bivalence of endpoint status, AMetric no-selector discipline, unique admissible interior, standing as reuse-stable admissibility, report preservation, no same-act repair, no carrier transfer, and no independent same-domain endpoint-status discriminator.  Therefore any status factor must be bookkeeping, governance-equivalent to the fixed endpoint interface, a domain shift, or a forbidden independent discriminator.
+\end{proof}
+
+\begin{theorem}[No local endpoint-standing residual separator]\label{thm:no-RBEsep}
+No residual separator branch has local endpoint standing on the fixed core--petal carrier:
+\[
+  \neg\exists\calF\bigl(\RBEsep^{\calC}_{k,H_k}(\calF)\wedge \LocalEndpointUse(\RBEsep^{\calC}_{k,H_k}(\calF))\bigr).
+\]
+\end{theorem}
+
+\begin{proof}
+Assume \(\RBEsep^{\calC}_{k,H_k}(\calF)\wedge \LocalEndpointUse(\RBEsep^{\calC}_{k,H_k}(\calF))\).  By Theorem~\ref{thm:RBE-status}, the residual separator performs local endpoint-status work.  It is not bookkeeping, not governance-equivalent to the positive core--petal occupation interface, and not a carrier shift.  Therefore it is an independent same-domain endpoint-status discriminator.  This contradicts Theorem~\ref{thm:no-ind-disc}.
+\end{proof}
+
+\section{Local Endpoint Discharge and Transfer}
+
+\begin{theorem}[Kernel-forced discharge of the calibrated residual separator]\label{thm:transfer}
+Fix \(k\ge3\), a certificate language \(\calC\), a completeness record \(\Complete^{\calC}_{k,H_k}\), and an admissible finite ceiling \(H_k\ge H_k^{\calC}<\infty\).  In every nondegenerate fixed core--petal endpoint proof, if \(\calF\) is opened as the live exact countercase, then
+\[
+  \NoSun_k(\calF)\wedge |\calF|>e^{H_k n}
+  \Rightarrow
+  \neg \RBEsep^{\calC}_{k,H_k}(\calF).
+\]
+Equivalently, under the classical branch split internal to that local endpoint proof, the certified branch \(\BMF^{\calC}_{k,H_k}(\calF)\) is the only remaining branch.  This is an endpoint-discharge result, not an AASC-free construction of the factorization map \(\Phi\).
+\end{theorem}
+
+\begin{proof}
+Assume \(\NoSun_k(\calF)\) and \(|\calF|>e^{H_k n}\) in the local endpoint proof.  Suppose for contradiction that \(\RBEsep^{\calC}_{k,H_k}(\calF)\) holds.  Since the family has been opened as the exact endpoint countercase, Theorem~\ref{thm:local-RBE-use} gives \(\LocalEndpointUse(\RBEsep^{\calC}_{k,H_k}(\calF))\).  This contradicts Theorem~\ref{thm:no-RBEsep}.  Hence \(\neg\RBEsep^{\calC}_{k,H_k}(\calF)\).  By the dichotomy of Proposition~\ref{prop:countercase-dichotomy}, the certified branch \(\BMF^{\calC}_{k,H_k}(\calF)\) is the remaining branch in the local endpoint proof (not a separately constructed AASC-free certificate).  No AASC-free construction of \(\Phi\) is claimed by this discharge step.
+\end{proof}
+
+\begin{corollary}[Kernel-forced sunflower endpoint closeout relative to a calibrated certificate language]\label{cor:aasc-sunflower}
+Let \(k\ge3\) and let \(\calC,\Complete^{\calC}_{k,H_k},H_k\) be fixed calibrated proof data with \(H_k\ge H_k^{\calC}<\infty\).  In the nondegenerate AASC endpoint regime, the local endpoint countercase to the bound
+\[
+  f(n,k)<c_k^n
+\]
+is discharged for every \(c_k>e^{H_k}\).
+\end{corollary}
+
+\begin{proof}
+Suppose \(|\calF|\ge c_k^n>e^{H_kn}\) and \(\NoSun_k(\calF)\) are opened as the exact local countercase.  By Theorem~\ref{thm:transfer}, the residual separator branch is discharged and the certified branch \(\BMF^{\calC}_{k,H_k}(\calF)\) remains in the local endpoint proof.  By Proposition~\ref{prop:BMF-bound}, \(|\calF|\le e^{H_kn}\), contradiction.  Hence the local countercase is discharged and \(\Sun_k(\calF)\) follows in the AASC endpoint regime.  By Proposition~\ref{prop:corepetal}, this is the existence of a \(k\)-sunflower.
+\end{proof}
+
+\section{Anti-Trivialization Discipline}
+
+The proof does not license the schema \(\neg P\Rightarrow P\).  The closeout requires all of the following special data:
+\begin{enumerate}[label=(\roman*)]
+\item a fixed nondegenerate endpoint carrier \(\calF\subseteq\binom{U}{n}\), \(C\mapsto\calF_C\), \(\nu(\calF_C)\);
+\item a positive role-cardinality endpoint \(\exists C\,\nu(\calF_C)\ge k\);
+\item a finite certificate branch \(\BMF_{k,H_k}\) with an independent entropy bound;
+\item a calibrated residual branch \(\RBEsep\) obtained only after certified, too-low-ceiling, certificate-language-incompleteness, support, bookkeeping, and carrier-shift routes are removed;
+\item local exact-countercase use of \(\calF\) in the universal proof;
+\item the AASC no-independent-discriminator consequence on the fixed carrier.
+\end{enumerate}
+Without this entire structure, arbitrary negation does not become a forbidden separator.
+
+\section{Proof-Class Boundary and AASC-Free Reconstruction}
+
+This manuscript proves a kernel-forced AASC endpoint transfer.  Kernel necessity is not conditional within a nondegenerate determinate endpoint object or domain.  An AASC-free reconstruction would prove \(H_k^{\calC}<\infty\) and construct the calibrated certificate branch directly,
+\[
+  \NoSun_k(\calF)\Rightarrow \BMF^{\calC}_{k,H_k}(\calF),
+\]
+for a calibrated ceiling \(H_k\ge H_k^{\calC}\), or would replace Theorem~\ref{thm:no-RBEsep} by a finite combinatorial theorem excluding \(\RBEsep^{\calC}_{k,H_k}\).  That is a different proof route.  It is not a correctness requirement for the present proof class unless the kernel-forced route is first broken.  The object-level certificate branch is not constructed by the residual-separator discharge; the calibrated residual countercase is locally discharged, leaving the certified branch as the only endpoint-admissible negative route above the calibrated ceiling.
+
+The current sunflower literature develops spread and entropy methods toward the same endpoint.  Erdős--Rado gave the classical factorial bound; Alweiss--Lovett--Wu--Zhang improved the bound to roughly \((\log n)^n\); Rao, Tao, and Bell--Chueluecha--Warnke refined the spread/entropy route further.  These works motivate the spread and entropy language used here, but the closeout of the residual branch is supplied by the kernel-forced endpoint-transfer route.
+
+\section{Standing Denial Targets}
+
+A same-mode denial has standing only if it identifies one of the following failures:
+\begin{enumerate}[label=(D\arabic*)]
+\item the core--petal equivalence fails;
+\item the alleged endpoint/counterexample act does not instantiate nondegenerate determinate same-domain status; otherwise the kernel is already active;
+\item a faithful same-regime replacement for a named kernel role preserves fixed target, carrier, branch role, act-time finality, and lawful-redescription stability without paying any cost listed in Theorem~\ref{thm:cost-kernel-denial};
+\item exact countercase use does not have local endpoint-countercase force;
+\item the chosen ceiling is miscalibrated, i.e. a \(\calC\)-certified no-sunflower motif has entropy density greater than \(H_k\);
+\item the certificate language is incomplete for a finite bounded certificate that is being used as support;
+\item objective non-BMF under exact countercase use is inert rather than endpoint-status work;
+\item \(\RBEsep_{k,H_k}\) is support-only or bookkeeping despite carrying counterexample force;
+\item \(\RBEsep_{k,H_k}\) is governance-equivalent to positive core--petal occupation;
+\item \(\RBEsep_{k,H_k}\) is a carrier shift rather than same-carrier endpoint-status work;
+\item endpoint use on this nondegenerate carrier does not exclude independent same-domain endpoint-status discriminators;
+\item \(\BMF_{k,H_k}\) fails the finite entropy bound;
+\item the argument promotes raw objecthood to endpoint use without exact local countercase discipline;
+\item the argument proves arbitrary universal statements without a problem-specific residual separator structure.
+\end{enumerate}
+
+\section{Conclusion}
+
+The sunflower endpoint has a fixed core--petal residual matching carrier.  A large no-sunflower family, when used as the live same-carrier countercase, is not merely raw sethood; it is a determinate local endpoint act.  That status already carries the kernel roles of admissibility, standing, reference, and irreversibility.  The finite certificate branch \(\BMF^{\calC}_{k,H_k}\) is support and entropy accounting relative to a complete certificate-language record \(\Complete^{\calC}_{k,H_k}\) and calibrated ceiling \(H_k\ge H_k^{\calC}\).  Lawful negative motifs are preserved below that ceiling.  The calibrated residual branch \(\RBEsep^{\calC}_{k,H_k}\), when used locally as endpoint countercase, is the only remaining same-carrier negative status route after certified, too-low-ceiling, certificate-language-incompleteness, support, bookkeeping, epistemic, and carrier-shift alternatives are removed.  It therefore induces independent endpoint-status work, which the kernel-forced fixed-domain consequence layer excludes.
+
+The closeout is relative to the fixed proof instance \((\calC,\Complete^{\calC}_{k,H_k},H_k)\).  Once these data are fixed and calibrated, the residual separator is not a lawful same-carrier local endpoint countercase.  The object-level certificate branch is not constructed by the residual-separator discharge; rather, the calibrated residual countercase is locally discharged, leaving the certified branch as the only endpoint-admissible negative route above the calibrated ceiling.
+
+The result is a proof in the AASC endpoint-transfer class.  AASC-free reconstruction would require explicit certificate extraction or an alternative finite exclusion of the residual separator.  Such a reconstruction is a separate route; it is not a correction to the dependency order established here.
+
+\appendix
+
+\section{Adversarial Audit Matrix}
+
+\begin{center}
+\begin{tabular}{p{0.37\linewidth}p{0.55\linewidth}}
+\toprule
+Objection & Response \\
+\midrule
+A raw family only has to exist to refute the theorem. & A raw family exists as an object.  To stand as a determinate same-carrier counterexample to this endpoint, it must fix the carrier, branch role, size-excess status, core--petal non-occupation, act-time status, and lawful-redescription role.  That governed status triggers the kernel. \\
+\addlinespace
+AASC is merely an optional overlay. & No: for a nondegenerate determinate endpoint object, the kernel is already active.  A critic may avoid the vocabulary only by preserving the same roles under different names, or else paying the costs of kernel loss. \\
+\addlinespace
+The proof defines away the hard case by \(\neg\BMF\). & The proof does not define it away.  It isolates the residual branch and excludes its endpoint-standing use by the no-independent-discriminator closure.  The AASC-free reconstruction task is certificate extraction by a separate route. \\
+\addlinespace
+\(\BMF\) is tautological. & Proposition~\ref{prop:BMF-bound} is intentionally simple: certified factorization gives an entropy bound.  The nontrivial issue is whether arbitrary sunflower-free families have such certificates; this is exactly the AASC-free reconstruction boundary. \\
+\addlinespace
+The proof risks proving arbitrary universal statements. & The proof requires a fixed core--petal residual matching carrier, a role-cardinality positive endpoint, a finite certified branch, a residual uncertified branch, and no-independent-discriminator closure.  Arbitrary negation lacks these data. \\
+Ceiling calibration is arbitrary. & The endpoint split is sound only for calibrated ceilings \(H_k\ge H_k^{\calC}\).  Lawful no-sunflower motifs above a proposed ceiling force recalibration, not residual exclusion. \\
+Certificate language is incomplete. & Then the omitted finite bounded certificate extends \(\calC\) or remains support pending encoding.  Objective non-BMF enters the residual route only after \(\Complete^{\calC}_{k,H_k}\) is available. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Notation Ledger}
+
+\begin{center}
+\begin{tabular}{p{0.25\linewidth}p{0.65\linewidth}}
+\toprule
+Symbol & Meaning \\
+\midrule
+\(\calF\) & An \(n\)-uniform family \(\calF\subseteq\binom{U}{n}\). \\
+\(\calF_C\) & Residual petal family over core \(C\). \\
+\(\nu(\calF_C)\) & Matching number of the residual family. \\
+\(\Sun_k(\calF)\) & Positive endpoint: some core has \(k\) disjoint residual petals. \\
+\(\NoSun_k(\calF)\) & Bare negative branch: every core has residual matching number less than \(k\). \\
+\(\BMF^{\calC}_{k,H_k}(\calF)\) & Bounded motif factorization certificate at calibrated entropy level \(H_k\) in certificate language \(\calC\). \\
+\(\RBEsep^{\calC}_{k,H_k}(\calF)\) & Calibrated residual entropy separator: no sunflower, size above \(e^{H_k n}\), and objective no-BMF certificate together with \(\Complete^{\calC}_{k,H_k}\). \\
+\(\Kernel\) & AASC kernel \(\{\Adm,\St,\KRef,\Irr\}\). \\
+\(\Aplus\) & Fixed-domain consequence layer: AMetricity, no-selector, no-repair, no-carrier-transfer, no-independent-discriminator closure, and report preservation. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Theorem Dependency Ladder}
+
+\begin{enumerate}[label=(T\arabic*)]
+\item Core--petal endpoint equivalence: Proposition~\ref{prop:corepetal}.
+\item Target adequacy forces the kernel already active in nondegenerate endpoint status: Theorem~\ref{thm:adequacy-kernel}.
+\item Cost of kernel denial: Theorem~\ref{thm:cost-kernel-denial}.
+\item Exact countercase object-to-endpoint bridge: Theorem~\ref{thm:object-countercase}.
+\item BMF certificate entropy bound: Proposition~\ref{prop:BMF-bound}.
+\item BMF is support, not endpoint authority: Lemma~\ref{lem:BMF-support}.
+\item Objective non-BMF under exact countercase use is status work: Theorem~\ref{thm:nonBMF-status}.
+\item Residual separator is not arbitrary negation: Theorem~\ref{thm:not-arbitrary-negation}.
+\item Residual separator induces local endpoint-status work: Theorem~\ref{thm:RBE-status}.
+\item Local endpoint use excludes independent same-domain endpoint-status discriminators: Theorem~\ref{thm:no-ind-disc}.
+\item Local residual separator use is local endpoint use: Theorem~\ref{thm:local-RBE-use}.
+\item No local endpoint-standing residual separator: Theorem~\ref{thm:no-RBEsep}.
+\item Local endpoint discharge of the objective non-BMF countercase: Theorem~\ref{thm:transfer}.
+\item Endpoint closeout relative to a fixed motif-ceiling parameter: Corollary~\ref{cor:aasc-sunflower}.
+\end{enumerate}
+
+
+
+\begin{thebibliography}{99}
+\bibitem{BloomErdos20}
+T. F. Bloom, Erd\H{o}s Problem \#20, \emph{Erd\H{o}s Problems}, \url{https://www.erdosproblems.com/20}, accessed 2026-07-07.
+
+\bibitem{ErdosRado1960}
+P. Erd\H{o}s and R. Rado, \emph{Intersection theorems for systems of sets}, Journal of the London Mathematical Society 35 (1960), 85--90.
+
+\bibitem{AlweissLovettWuZhang2021}
+R. Alweiss, S. Lovett, K. Wu, and J. Zhang, \emph{Improved bounds for the sunflower lemma}, Annals of Mathematics 194 (2021), no. 3, 795--815.
+
+\bibitem{Rao2020}
+A. Rao, \emph{Coding for sunflowers}, Discrete Analysis 2020, Paper No. 2, 8 pp.; arXiv:1909.04774.
+
+\bibitem{BellChueluechaWarnke2021}
+T. Bell, S. Chueluecha, and L. Warnke, \emph{Note on sunflowers}, Discrete Mathematics 344 (2021), no. 7, 112367.
+
+\bibitem{Tao2020SunflowerEntropy}
+T. Tao, \emph{The sunflower lemma via Shannon entropy}, blog post, 2020, \url{https://terrytao.wordpress.com/2020/07/20/the-sunflower-lemma-via-shannon-entropy/}.
+
+\bibitem{RaoStorySunflowers}
+A. Rao, \emph{The story of sunflowers}, preprint, 2025, arXiv:2509.14790.
+
+\bibitem{MaleyPNP2026}
+A. J. Maley, \emph{$P=NP$ by Exclusion of the SAT Separator Endpoint}, AASC endpoint-rigidity manuscript, 2026.
+
+\bibitem{MaleyRH2026}
+A. J. Maley, \emph{The Riemann Hypothesis by Exclusion of the Prime-Trace Amplitude Separator}, AASC endpoint-rigidity manuscript, 2026.
+
+\bibitem{MaleyKernel2026}
+A. J. Maley, \emph{Non-Degenerate Construction and the Kernel of Admissibility}, AASC kernel manuscript, 2026.
+
+\bibitem{MaleyClosure2026}
+A. J. Maley, \emph{Closure by Exhaustion for Same-Scope Operators under Admissibility}, AASC same-scope closure manuscript, 2026.
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,25 @@
+name: Lean audit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lean-audit:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Lean
+        uses: leanprover/lean-action@v1
+        with:
+          auto-config: false
+          use-github-cache: true
+          build: false
+
+      - name: Run Sunflower A+ audit
+        shell: pwsh
+        run: powershell -ExecutionPolicy Bypass -File scripts\check-sunflower-a-plus-audit.ps1

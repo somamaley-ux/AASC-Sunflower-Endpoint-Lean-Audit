@@ -1,0 +1,10 @@
+.lake/
+*.olean
+*.ilean
+*.c
+*.setup.json
+*.trace
+*.tmp
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,6 @@
+name = "AASCSunflowerEndpointLeanAudit"
+version = "0.1.0"
+defaultTargets = ["SunflowerAASC"]
+
+[[lean_lib]]
+name = "SunflowerAASC"
