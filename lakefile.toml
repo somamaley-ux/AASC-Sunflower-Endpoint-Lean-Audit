@@ -1,6 +1,7 @@
 name = "AASCSunflowerEndpointLeanAudit"
 version = "0.2.0"
 defaultTargets = ["SunflowerAASC", "Checks"]
+packagesDir = "p"
 
 [[lean_lib]]
 name = "SunflowerAASC"

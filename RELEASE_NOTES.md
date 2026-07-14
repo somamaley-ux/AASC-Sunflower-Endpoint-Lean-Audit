@@ -32,6 +32,9 @@ The repository declares no project-specific Lean axioms and contains no live
 25 focused axiom checks. It does not claim an AASC-free conventional analogue
 or an independent Mathlib reconstruction of the population theorem.
 
+The Lake workspace uses the short dependency directory `p/` so the pinned
+kernel modules also compile on Windows runners without path-length failure.
+
 Release assets:
 
 - `Two_Track_Closure_for_the_Three_Petal_Sunflower_Endpoint.pdf`
