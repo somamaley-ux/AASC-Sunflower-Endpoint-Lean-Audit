@@ -10,6 +10,13 @@ structure ExactCountercaseUse
   noSunflower_holds : S.noSunflower F
   openedAsLiveCountercase_holds : openedAsLiveCountercase
 
+/-- Exact countercase together with the quantitative ceiling violation. -/
+structure QuantitativeExactCountercaseUse
+    (S : SunflowerCarrier)
+    (H : Nat)
+    (F : S.Family) extends ExactCountercaseUse S F where
+  sizeExcess_holds : S.ceilingBound H S.rank < S.familySize F
+
 /-- Residual separator status work: the residual branch yields a discriminator. -/
 structure ResidualStatusWork
     (S : SunflowerCarrier)

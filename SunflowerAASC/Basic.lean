@@ -43,11 +43,19 @@ structure SunflowerCarrier where
   Family : Type
   Core : Type
   Petal : Type
+  NegativeMotif : Type
+  StandingFactor : Type
   k : Nat
   rank : Nat
   nondegenerate : Prop
+  familySize : Family -> Nat
+  ceilingBound : Nat -> Nat -> Nat
   sunflower : Family -> Prop
   residualWitness : Family -> Core -> Prop
+  standingFactorBranch : StandingFactor -> Family -> Prop
+  lawfulNegativeMotif : NegativeMotif -> Prop
+  motifDensityExceeds : Nat -> NegativeMotif -> Prop
+  motifExcludedByCarrierCriterion : NegativeMotif -> Prop
   corePetalEndpoint : Family -> Prop :=
     fun F => Exists (fun C => residualWitness F C)
   corePetalEquivalence : forall F, sunflower F <-> corePetalEndpoint F
@@ -147,6 +155,12 @@ theorem LocalEndpointUse.targetAdequate_holds
 structure IndependentDiscriminator
     (S : SunflowerCarrier)
     (branch positive : S.Family -> Prop) where
+  factor : S.StandingFactor
+  factorRealizesBranch :
+    forall F : S.Family,
+      S.standingFactorBranch factor F <-> branch F
+  notSameSideNegativeRefinement :
+    Not (forall F : S.Family, branch F -> S.noSunflower F)
   sameCarrier : Prop
   sameDomain : Prop
   discriminatesEndpointStatus : Prop

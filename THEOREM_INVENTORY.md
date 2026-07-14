@@ -1,49 +1,99 @@
 # Theorem Inventory
 
-This inventory maps the hardened manuscript's main proof links to the Lean audit surface.
+This is the release-facing inventory of the transitive theorem spine. It lists
+the load-bearing anchors rather than every helper declaration.
 
-## Carrier And Endpoint Layer
+## Legacy Manuscript Audit
 
-- `SunflowerCarrier`: fixed core-petal residual matching carrier.
-- `corePetal_endpoint_equivalence`: typed core-petal endpoint equivalence.
-- `noSunflower_iff_not_corePetalEndpoint`: negative endpoint transported across the carrier equivalence.
-- `SunflowerThreshold`: typed anchor for the manuscript's `f(n,k)` threshold definition.
-- `SunflowerThreshold.thresholdSurfaceComplete_holds`: threshold property and supremum property are both carried.
-- `LocalEndpointUse`: local endpoint act with fixed target, carrier, branch role, reportability, downstream reuse, and act-time boundary.
+- `sunflowerAPlusObligationCount_eq`: checks the 31-row manuscript audit ledger.
+- `SunflowerAPlusAuditCertificate.auditSurfaceComplete_holds`: exposes the
+  completed original audit surface.
+- `SunflowerAPlusAuditCertificate.transfer_to_BMF`: retains the original local
+  residual-to-bounded-motif transfer as a correspondence theorem.
 
-## Kernel Layer
+## Concrete Combinatorics
 
-- `KernelRole`: four kernel roles.
-- `kernelRoles_length_eq`: kernel role count is four.
-- `KernelPackage`: proof-carrying kernel package.
-- `KernelForcedGovernance`: target-adequacy-to-kernel and no-independent-discriminator governance.
-- `local_endpoint_use_excludes_independent_discriminator`: local endpoint use rules out an independent same-domain endpoint-status discriminator.
-- `AASCConsequenceLayer`: typed recap package for endpoint bivalence, no-selector discipline, unique admissible interior, no same-act repair, no carrier transfer, report preservation, and no independent discriminator.
-- `AASCConsequenceLayer.recapSurfaceComplete_holds`: all recap fields are exposed as proof-carrying obligations.
+- `V2.Concrete.FiniteCoreLinkMatching.rawBlocker_card_le_pred_mul_rank`:
+  proves the sharpened classical blocker estimate `|B| <= (k - 1) * n`.
+- `V2.PopulationInheritance.threePetalTraditionalCutoff_controlled`: checks the
+  traditional three-petal seed cutoff `2047`.
+- `V2.PopulationInheritance.threePetalTraditionalSeedTensorProfileBound_eq`:
+  checks the inherited finite profile reservoir `4094`.
+- `V2.PopulationInheritance.threePetalTraditionalSeedConstraintBase_eq`:
+  checks the refined base `8384512`.
+- `V2.PopulationInheritance.no_threePetal_denseCountercase_through_seedReflectedCutoff`:
+  excludes the dense countercase through rank `8384511`.
 
-## Certificate And Residual Layer
+## Type And Identity Population
 
-- `CertificateLanguage`: fixed finite certificate language.
-- `CompletenessRecord`: calibrated completeness record for the fixed proof instance.
-- `BoundedMotifCertificate`: bounded motif certificate branch.
-- `BMF`: support-level bounded motif factorization predicate.
-- `ObjectiveNonBMF`: objective certificate failure, separated from epistemic non-discovery.
-- `ResidualSeparator`: calibrated residual separator branch.
+- `V2.FixedIdentityPopulation.nonempty_sameSideExhaustion_iff_fixedIdentityRealization`:
+  identifies same-side exhaustion with fixed-identity realization.
+- `V2.FixedIdentityPopulation.KernelFaithfulFixedIdentityRealization.identity_preserved_at_rank`:
+  proves inherited identity is stable at every realized rank.
+- `V2.HighRankPopulationInheritance.population_or_oversizedCanonicalSupportFiber`:
+  isolates the exact finite-population versus oversized-fibre alternative.
+- `V2.HighRankPopulationInheritance.nonempty_boundedLoadExhaustion_iff_canonicalSupportFiberBound`:
+  checks the quantitative equivalence used at the crossing.
 
-## Transfer Layer
+## Mechanized Kernel Repository
 
-- `ExactCountercaseUse`: exact local countercase opening.
-- `ResidualStatusWork`: residual branch as endpoint-status work.
-- `ResidualSeparatorBridge`: bridge from exact countercase use to local residual status work.
-- `no_local_endpoint_standing_residual_separator`: kernel-forced contradiction for the residual branch.
-- `kernel_forced_discharge_of_calibrated_residual_separator`: discharge of the calibrated residual separator.
-- `local_endpoint_transfer_to_BMF`: transfer from exact local countercase use to the BMF branch under the fixed split.
+- `V2.MechanizedKernelImport.endpointConstructionRegime`: translates a live
+  Sunflower endpoint use into the standalone kernel repository's
+  `ConstructionRegime`.
+- `V2.MechanizedKernelImport.endpointConstructionRegime_targetPhenomenon`:
+  proves target identity, step eligibility, act-time stability, and governed
+  construction use on that regime.
+- `V2.MechanizedKernelImport.endpointConstructionRegime_kernelPackage`:
+  invokes the upstream construction-forces-kernel theorem.
+- `V2.MechanizedKernelImport.endpointConstructionRegime_fixedDomainClosure`:
+  constructs the upstream fixed-domain closure packet.
+- `V2.MechanizedKernelImport.endpointConstructionRegime_kernelUnique`:
+  imports uniqueness up to governance equivalence on the fixed domain.
+- `V2.MechanizedKernelImport.mechanizedKernelDependencyCertificate`: combines
+  the kernel package, fixed-domain closure, uniqueness, no derivation below the
+  kernel, no faithful lower generator, and global synthesis.
+- `V2.ManuscriptKernelTransfer.KernelImportRoute.noSameDomainDerivationBelowKernel`:
+  exposes the imported impossibility theorem on the Sunflower route.
+- `V2.ManuscriptKernelTransfer.KernelImportRoute.governanceEquivalentReplacement_hasKernel`:
+  proves that a same-domain governance-equivalent replacement cannot shed the
+  kernel.
 
-## A+ Audit Layer
+## Sunflower Activation And Population Boundary
 
-- `SunflowerAPlusObligation`: 31-row theorem-spine ledger.
-- `sunflowerAPlusObligationCount_eq`: ledger count is exactly 31.
-- `SunflowerAPlusAuditCertificate`: public audit certificate tying governance, residual bridge, completeness, branch split, and nondegeneracy together.
-- `SunflowerAPlusAuditCertificate.auditSurfaceComplete_holds`: audit surface completeness theorem.
-- `SunflowerAPlusAuditCertificate.transfer_to_BMF`: certificate-level transfer theorem.
-- `Checks/Axiom/SunflowerAPlusAudit.lean`: public audit entrypoint.
+- `V2.ManuscriptKernelTransfer.neutralEndpointAdequacy_iff_targetAdequate`:
+  proves the manuscript's neutral antecedent is exactly the existing endpoint
+  adequacy surface.
+- `V2.ManuscriptKernelTransfer.KernelImportRoute.activation`: activates the
+  four kernel roles before finite classification.
+- `V2.ManuscriptKernelTransfer.KernelImportRoute.denialAndStrictWeakeningExhausted`:
+  exhausts denial and strict weakening into their explicit mathematical costs.
+- `V2.ManuscriptKernelTransfer.ThreePetalDenseHighRankManuscriptContext`:
+  bundles the generated high-rank context used by manuscript Theorem 6.2.
+- `V2.ManuscriptKernelTransfer.ThreePetalLocalManuscriptPopulation`: states the
+  finite profile/role/slot conclusion of that theorem.
+- `V2.ManuscriptKernelTransfer.ImportedManuscriptKernelGovernedPopulationTheorem`:
+  is the exact typed manuscript Theorem 6.2 population boundary. It is
+  separate from, and downstream of, the mechanized kernel dependency.
+
+## Terminal Closure
+
+- `V2.ManuscriptKernelTransfer.ThreePetalLocalManuscriptPopulation.fixedIdentityPopulation`:
+  constructs fixed inherited identity from the imported population.
+- `V2.ManuscriptKernelTransfer.ThreePetalLocalManuscriptPopulation.canonicalSupportFiberBound`:
+  derives the canonical support-fibre bound.
+- `V2.ManuscriptKernelTransfer.ImportedManuscriptKernelGovernedPopulationTheorem.toKernelGovernedFiberClosureSource`:
+  constructs the high-rank inheritance source.
+- `V2.ManuscriptKernelTransfer.sunflower_of_importedManuscriptKernelGovernedClosure`:
+  proves a genuine `Concrete.HasSunflower 3 F` from every endpoint size excess.
+- `V2.ManuscriptKernelTransfer.ImportedManuscriptKernelGovernedPopulationTheorem.provesEndpointBound`:
+  proves `|F| <= 8384512^n` for every three-sunflower-free uniform family.
+- `V2.ManuscriptKernelTransfer.nonempty_importedManuscriptPopulationTheorem_iff_endpointBound`:
+  proves the imported theorem has exactly endpoint strength.
+
+## Public Entrypoints
+
+- `SunflowerAASC.lean`: imports only the terminal manuscript closure module.
+- `Checks/Axiom/SunflowerAPlusAudit.lean`: focused `#print axioms` audit for
+  25 imported-kernel and load-bearing closure anchors.
+- `scripts/check-sunflower-a-plus-audit.ps1`: prohibited-token scan, terminal
+  build, and focused audit runner.

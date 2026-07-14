@@ -1,18 +1,27 @@
 # Release Status
 
-## v0.1.0
+## v0.2.0
 
-The `v0.1.0` release is the first public release of the manuscript-faithful Sunflower AASC endpoint Lean audit.
+`v0.2.0` is the current manuscript-matched Sunflower closure release on
+`main`. It contains:
 
-Release scope:
+- the minimal transitive Lean spine ending at
+  `sunflower_of_importedManuscriptKernelGovernedClosure`;
+- a pinned dependency on the standalone mechanized kernel and a typed
+  Sunflower-to-kernel construction-regime bridge;
+- the complete base-`8384512` endpoint theorem;
+- a 25-anchor axiom and prohibited-token audit;
+- the synchronized 31-page hybrid manuscript PDF; and
+- the verified 17-entry manuscript source archive.
 
-- hardened manuscript snapshot under `papers/sunflower/`,
-- Lean A+ audit surface for the AASC endpoint-transfer proof class,
-- threshold and consequence-layer anchors from the lightly hardened manuscript,
-- public audit entrypoint `Checks/Axiom/SunflowerAPlusAudit.lean`,
-- GitHub Actions Lean audit workflow.
+The release is neither a draft nor a prerelease. Its mathematical claim is the
+complete two-track endpoint closure for non-degenerate determinate regimes;
+AASC is the necessary governance of that subject matter, not an optional
+family condition. Kernel necessity is imported from its own Lean repository.
+The remaining formal boundary is the manuscript's explicit target-specific
+population theorem. This release does not claim that theorem has been
+independently reconstructed from Mathlib or that conventional combinatorics
+already has an AASC-free analogue.
 
-Release assets:
-
-- `papers/sunflower/Sunflower_Endpoint_Rigidity_and_Kernel_Forced_AASC_Transfer.pdf`
-- `papers/sunflower/Sunflower_Endpoint_Rigidity_and_Kernel_Forced_AASC_Transfer.zip`
+Release assets are stored under `papers/sunflower/` and attached to the GitHub
+release.

@@ -122,13 +122,25 @@ structure SunflowerAPlusAuditCertificate
     (S : SunflowerCarrier)
     (C : CertificateLanguage S)
     (H : Nat) where
+  kernelNecessity : KernelNecessitySource S
+  fixedDomainClosure : FixedDomainAPlusClosureSource S
   governance : KernelForcedGovernance S
   residualBridge : ResidualSeparatorBridge S C H
   completeness : CompletenessRecord S C H
+  objectiveMotifCompleteness : ObjectiveMotifCompletenessSource S C H
   branchSplit :
     forall F : S.Family,
       S.noSunflower F -> BMF S C H F \/ ObjectiveNonBMF S C H F
   carrierNondegenerate : S.nondegenerate
+
+def SunflowerAPlusAuditCertificate.kernelFirstCorpusMachinery
+    {S : SunflowerCarrier}
+    {C : CertificateLanguage S}
+    {H : Nat}
+    (A : SunflowerAPlusAuditCertificate S C H) :
+    KernelFirstCorpusMachinery S :=
+  { kernelNecessity := A.kernelNecessity
+    fixedDomainClosure := A.fixedDomainClosure }
 
 def SunflowerAPlusAuditCertificate.auditSurfaceComplete
     {S : SunflowerCarrier}
@@ -137,6 +149,7 @@ def SunflowerAPlusAuditCertificate.auditSurfaceComplete
     (A : SunflowerAPlusAuditCertificate S C H) : Prop :=
   sunflowerAPlusObligations.length = 31 /\
   sunflowerAPlusObligationTitlesPopulated = true /\
+  completenessCalibrationObligations.length = 4 /\
   kernelRoles.length = 4 /\
   C.finiteLanguage /\
   A.completeness.ready /\
@@ -151,10 +164,11 @@ theorem SunflowerAPlusAuditCertificate.auditSurfaceComplete_holds
   exact
     And.intro sunflowerAPlusObligationCount_eq
       (And.intro sunflowerAPlusObligationTitlesPopulated_eq_true
-        (And.intro kernelRoles_length_eq
-          (And.intro C.finiteLanguage_holds
-            (And.intro (CompletenessRecord.ready_holds A.completeness)
-              A.carrierNondegenerate))))
+        (And.intro completenessCalibrationObligationCount_eq
+          (And.intro kernelRoles_length_eq
+            (And.intro C.finiteLanguage_holds
+              (And.intro (CompletenessRecord.ready_holds A.completeness)
+                A.carrierNondegenerate)))))
 
 theorem SunflowerAPlusAuditCertificate.discharge_residual
     {S : SunflowerCarrier}

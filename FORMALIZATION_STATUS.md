@@ -1,47 +1,104 @@
 # Formalization Status
 
-## Status
+## Current Result
 
-This project has reached the local A+ audit gate for the Sunflower AASC endpoint-transfer manuscript. The Lean surface is proof-class faithful: it formalizes the typed objects and dependency ladder used by the hardened manuscript, and it exposes a single public audit entrypoint.
+Release `v0.2.0` is a manuscript-matched Lean closure for the three-petal
+Sunflower endpoint over non-degenerate determinate finite-family regimes.
+AASC is the constraint vocabulary for the necessity conditions of that
+determinate subject matter, not an optional family-side hypothesis.
 
-The latest manuscript hardening was scanned and synchronized into `papers/sunflower/`. The theorem dependency ladder did not change; the Lean build was lightly extended with anchors for the newly named sunflower threshold definition and the self-contained AASC consequence-layer recap.
+Lean proves the full downstream implication
 
-## Controlling Source Snapshot
-
-The mechanization follows the PDF-aligned hardened manuscript:
-
-- `papers/sunflower/main.tex`
-- `papers/sunflower/Sunflower_Endpoint_Rigidity_and_Kernel_Forced_AASC_Transfer.pdf`
-- `papers/sunflower/Sunflower_Endpoint_Rigidity_and_Kernel_Forced_AASC_Transfer.zip`
-
-The older `Sunflower_AASC_Endpoint_Transfer_Overleaf.zip` was inspected first. The PDF-adjacent source is materially stronger and is the controlling source used here because it includes the calibrated certificate language, local endpoint use, objective-vs-epistemic BMF failure, kernel-denial cost refinements, threshold framing, and the AASC consequence-layer recap.
-
-## Mechanized Claim
-
-The project machine-checks the following AASC endpoint-transfer spine:
-
-1. The sunflower endpoint is represented on a fixed core-petal residual matching carrier.
-2. Exact local countercase use is not raw objecthood; it is endpoint work on the fixed carrier.
-3. Target adequacy on that nondegenerate endpoint act forces the four-role kernel.
-4. A calibrated certificate language splits the local countercase branch into BMF support or objective non-BMF residual status work.
-5. Local residual status work yields an independent same-domain endpoint-status discriminator.
-6. Kernel-forced endpoint governance excludes that discriminator.
-7. Therefore the calibrated residual separator is discharged, and the local countercase route transfers to the bounded motif certificate branch.
-
-The threshold and consequence-layer additions are audit anchors for named manuscript surfaces. They do not alter the transfer theorem, residual discharge theorem, or 31-row A+ obligation ledger.
-
-## Explicit Boundary
-
-This repository does **not** claim to mechanize a conventional AASC-free proof of the Erdos-Rado sunflower conjecture from first-principles extremal combinatorics.
-
-It does claim to mechanize, without live `axiom`, `sorry`, `admit`, or `unsafe` declarations in the audit surface, the manuscript's AASC endpoint-transfer mechanism and its A+ theorem-spine ledger.
-
-## Verification
-
-Verified locally with:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File scripts\check-sunflower-a-plus-audit.ps1
+```text
+non-degenerate determinate endpoint
+  -> pinned mechanized-kernel certificate
+  -> activated kernel roles and denial-cost exhaustion
+  -> imported manuscript population theorem
+  -> fixed inherited identity
+  -> canonical support-fibre bound
+  -> dense high-rank inheritance source
+  -> genuine three-petal sunflower
+  -> |F| <= 8384512^n.
 ```
 
-The gate builds `SunflowerAASC`, checks `Checks\Axiom\SunflowerAPlusAudit.lean`, and scans the Lean audit surface for prohibited placeholder or escape declarations.
+No support-fibre source, identity source, collision sieve, or endpoint theorem
+remains as an additional Lean condition after the manuscript population import.
+
+## Two Formal Dependencies
+
+The kernel dependency is fully linked in Lean. The Lake manifest pins the
+standalone kernel repository at commit
+`8b51f035f86f781e5eeb18cbaef8b46e74ed4924`.
+`V2.MechanizedKernelImport.mechanizedKernelDependencyCertificate` constructs
+the upstream `ConstructionRegime`, kernel package, fixed-domain closure,
+uniqueness, no-lower-derivation result, and global synthesis certificate from
+the concrete endpoint route. No theorem-specific axiom is used.
+
+The remaining manuscript boundary is target-specific population, not kernel
+necessity. The external proof object is
+`V2.ManuscriptKernelTransfer.ImportedManuscriptKernelGovernedPopulationTheorem`.
+For each generated high-rank, sunflower-free countercase context, it supplies
+`ThreePetalLocalManuscriptPopulation`: the finite profile/role/slot population
+conclusion stated as manuscript Theorem 6.2.
+
+This is an ordinary proof-carrying structure passed to Lean theorems, not a
+global `axiom` declaration. Its proof is supplied by the corpus argument in the
+manuscript rather than reconstructed from Mathlib in this repository.
+
+The exact-strength audit
+
+```lean
+Nonempty (ImportedManuscriptKernelGovernedPopulationTheorem alpha) <->
+  ThreePetalSeedBaseEndpointBound alpha
+```
+
+shows that the import is endpoint-strength. This prevents a semantic relabeling
+of the original endpoint as a supposedly weaker finite-population convenience.
+
+## What Lean Establishes
+
+| Layer | Verified result |
+|---|---|
+| Classical combinatorics | finite uniform families, core-link matchings, live-petal hitting, raw blocker bound, low-rank seed range |
+| Kernel dependency | pinned upstream construction regime, kernel package, fixed-domain closure and uniqueness, no derivation below the kernel |
+| Local activation | endpoint adequacy, four kernel roles, denial and strict-weakening dispositions |
+| AASC population use | complete profile/role/slot realization with no fifth standing-bearing outcome |
+| Identity | inherited identity is preserved through fixed target, rank, endpoint, and certificate regime |
+| Quantitative crossing | canonical support fibres are bounded and converted into rank-deletion population |
+| Generative conclusion | every base-`8384512` size excess yields an actual three-petal sunflower |
+| Endpoint | every three-sunflower-free `n`-uniform family has cardinality at most `8384512^n` |
+
+## Claim Classification
+
+The mathematical result is not conditional on choosing an AASC regime. The
+theorem quantifies determinate families and uses stable identity, comparison,
+licensed transformation, and a fixed endpoint. On the imported kernel theorem,
+those uses already instantiate Admissibility, Standing, Reference, and
+Irreversibility. Removing one of them either removes the theorem's determinate
+subject, changes the carrier or policy, collapses to support or bookkeeping,
+or introduces a second authority; it does not produce a same-domain
+counterexample.
+
+Lean's `ImportedManuscriptKernelGovernedPopulationTheorem` parameter is a
+modular internalization boundary for manuscript Theorem 6.2. It is not a
+predicate selecting some uniform families. Once that proof object is supplied,
+Lean discharges every downstream obligation and proves the endpoint.
+
+The repository does not claim either of the following:
+
+- a Mathlib-only reconstruction of the corpus population theorem;
+- an AASC-free conventional combinatorial proof of the classical conjecture.
+
+Those are different proof projects, not unfinished steps in the checked
+manuscript closure.
+
+## Audit State
+
+The public audit scans the entire published Lean tree for prohibited escape
+hatches, completes 1,050 build jobs, and checks 25 imported-kernel and closure
+anchors. The kernel import and bridge are axiom-free. The remaining closure
+anchors use only standard Lean/Mathlib principles, including `propext`,
+`Classical.choice`, and `Quot.sound` where required.
+
+The synchronized manuscript PDF is 31 populated pages. Its source archive
+contains 17 intended entries and the same compiled PDF.

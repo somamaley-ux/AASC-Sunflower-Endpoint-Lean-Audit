@@ -1,33 +1,56 @@
 # Audit Handoff
 
-## Current Result
+## Reviewer Entry
 
-The repository is a standalone Lean A+ audit archive for the hardened Sunflower AASC endpoint-transfer manuscript. The public Lean surface builds locally and the audit script checks the theorem-spine entrypoint.
+Start with `SunflowerAASC/V2/MechanizedKernelImport.lean`, then read
+`SunflowerAASC/V2/ManuscriptKernelTransfer.lean`. The first file is the actual
+bridge to the pinned standalone kernel repository. The terminal theorems are:
 
-The latest light manuscript hardening was scanned against the previous repository snapshot. The theorem dependency ladder stayed stable. The Lean surface was updated only where the manuscript added named audit surfaces: the sunflower threshold definition and the AASC consequence-layer recap.
+- `sunflower_of_importedManuscriptKernelGovernedClosure`;
+- `ImportedManuscriptKernelGovernedPopulationTheorem.provesEndpointBound`; and
+- `nonempty_importedManuscriptPopulationTheorem_iff_endpointBound`.
 
-## Validation Command
+The first proves an actual three-petal sunflower from a base-`8384512` size
+excess. The second states the complete endpoint. The third audits the exact
+strength of the manuscript import.
+
+Also inspect:
+
+- `mechanizedKernelDependencyCertificate`;
+- `KernelImportRoute.noSameDomainDerivationBelowKernel`; and
+- `KernelImportRoute.governanceEquivalentReplacement_hasKernel`.
+
+These show that kernel necessity and fixed-domain no-lower-governance are
+machine-linked rather than prose-only dependencies.
+
+## Validation
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File scripts\check-sunflower-a-plus-audit.ps1
 ```
 
-The script performs three checks:
+The script scans all published Lean source, builds the one-module public
+entrypoint, and runs the focused axiom audit in
+`Checks/Axiom/SunflowerAPlusAudit.lean`.
 
-- verifies the selected Lean toolchain,
-- scans the Lean audit surface for live `axiom`, `sorry`, `admit`, or `unsafe` declarations,
-- builds `SunflowerAASC` and checks `Checks\Axiom\SunflowerAPlusAudit.lean`.
+## Claim Discipline
 
-The scanner uses `rg` when available and falls back to native PowerShell scanning on GitHub Actions runners.
+The strongest supported description is:
 
-## Reader-Facing Interpretation
+> A manuscript-faithful Lean mechanization that imports the separately
+> mechanized necessity kernel, instantiates it on the determinate Sunflower
+> endpoint, and verifies the complete closure from the typed manuscript
+> population theorem to a genuine three-petal sunflower and the
+> base-`8384512` endpoint.
 
-The mechanization should be described as a manuscript-faithful AASC endpoint-transfer audit. It is strong because Lean checks the structural proof objects, kernel-forced governance bridge, calibrated residual branch, local endpoint-use discharge, and 31-row obligation ledger.
+The exact boundary is load-bearing. Kernel necessity is a pinned Lean
+dependency; the corpus proof of the target-specific population theorem remains
+in the manuscript/corpus rather than being independently formalized here. An
+AASC-free conventional analogue is not claimed.
 
-It also now carries explicit anchors for the threshold framing and the fixed-domain consequence-layer recap introduced by the hardened manuscript.
+Calling the mathematical theorem conditional on an optional AASC regime is
+incorrect: AASC names the necessity conditions of the determinate objects and
+operations already quantified. Calling the Lean population field a modular
+proof boundary is correct.
 
-It should not be described as a conventional standalone proof of the classical sunflower conjecture independent of AASC. The AASC-free reconstruction burden remains a separate route.
-
-## Release State
-
-The repository is prepared for the `v0.1.0` GitHub release from the verified hardened-manuscript commit. The release assets are the manuscript PDF and source ZIP under `papers/sunflower/`.
+No other Lean-side closure source remains uninstantiated after that import.

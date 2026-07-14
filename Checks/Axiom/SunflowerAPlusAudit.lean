@@ -1,47 +1,36 @@
-import SunflowerAASC.APlusAudit
+import SunflowerAASC
 
 namespace SunflowerAASC
 
-theorem sunflower_a_plus_audit_obligation_count :
-    sunflowerAPlusObligations.length = 31 := by
-  exact sunflowerAPlusObligationCount_eq
+/-! The focused public axiom audit for the manuscript-matched closure spine. -/
 
-theorem sunflower_a_plus_audit_titles_populated :
-    sunflowerAPlusObligationTitlesPopulated = true := by
-  exact sunflowerAPlusObligationTitlesPopulated_eq_true
+#print axioms sunflowerAPlusObligationCount_eq
+#print axioms SunflowerAPlusAuditCertificate.auditSurfaceComplete_holds
+#print axioms SunflowerAPlusAuditCertificate.transfer_to_BMF
 
-theorem sunflower_kernel_role_count :
-    kernelRoles.length = 4 := by
-  exact kernelRoles_length_eq
+#print axioms V2.Concrete.FiniteCoreLinkMatching.rawBlocker_card_le_pred_mul_rank
+#print axioms V2.PopulationInheritance.threePetalTraditionalSeedTensorProfileBound_eq
+#print axioms V2.PopulationInheritance.threePetalTraditionalSeedConstraintBase_eq
+#print axioms V2.PopulationInheritance.no_threePetal_denseCountercase_through_seedReflectedCutoff
 
-theorem sunflower_a_plus_certificate_surface
-    {S : SunflowerCarrier}
-    {C : CertificateLanguage S}
-    {H : Nat}
-    (A : SunflowerAPlusAuditCertificate S C H) :
-    A.auditSurfaceComplete := by
-  exact A.auditSurfaceComplete_holds
+#print axioms V2.FixedIdentityPopulation.nonempty_sameSideExhaustion_iff_fixedIdentityRealization
+#print axioms V2.FixedIdentityPopulation.KernelFaithfulFixedIdentityRealization.identity_preserved_at_rank
+#print axioms V2.HighRankPopulationInheritance.population_or_oversizedCanonicalSupportFiber
+#print axioms V2.HighRankPopulationInheritance.nonempty_boundedLoadExhaustion_iff_canonicalSupportFiberBound
 
-theorem sunflower_a_plus_transfer_surface
-    {S : SunflowerCarrier}
-    {C : CertificateLanguage S}
-    {H : Nat}
-    (A : SunflowerAPlusAuditCertificate S C H)
-    {F : S.Family}
-    (E : ExactCountercaseUse S F) :
-    BMF S C H F := by
-  exact A.transfer_to_BMF E
-
-theorem sunflower_threshold_surface
-    {S : SunflowerCarrier}
-    (T : SunflowerThreshold S) :
-    T.thresholdSurfaceComplete := by
-  exact T.thresholdSurfaceComplete_holds
-
-theorem sunflower_consequence_layer_surface
-    {S : SunflowerCarrier}
-    (L : AASCConsequenceLayer S) :
-    L.recapSurfaceComplete := by
-  exact L.recapSurfaceComplete_holds
+#print axioms V2.ManuscriptKernelTransfer.neutralEndpointAdequacy_iff_targetAdequate
+#print axioms MaleyLean.Papers.MinimalConditionsForAdmissibleConstruction.PaperNothingDerivableBelowKernelStatement
+#print axioms MaleyLean.Papers.MinimalConditionsForAdmissibleConstruction.PaperGlobalSynthesisUnderCorpusClosuresClosedStatement
+#print axioms V2.MechanizedKernelImport.mechanizedKernelDependencyCertificate
+#print axioms V2.ManuscriptKernelTransfer.KernelImportRoute.noSameDomainDerivationBelowKernel
+#print axioms V2.ManuscriptKernelTransfer.KernelImportRoute.governanceEquivalentReplacement_hasKernel
+#print axioms V2.ManuscriptKernelTransfer.KernelImportRoute.activation
+#print axioms V2.ManuscriptKernelTransfer.KernelImportRoute.denialAndStrictWeakeningExhausted
+#print axioms V2.ManuscriptKernelTransfer.ThreePetalLocalManuscriptPopulation.fixedIdentityPopulation
+#print axioms V2.ManuscriptKernelTransfer.ThreePetalLocalManuscriptPopulation.canonicalSupportFiberBound
+#print axioms V2.ManuscriptKernelTransfer.ImportedManuscriptKernelGovernedPopulationTheorem.toKernelGovernedFiberClosureSource
+#print axioms V2.ManuscriptKernelTransfer.sunflower_of_importedManuscriptKernelGovernedClosure
+#print axioms V2.ManuscriptKernelTransfer.ImportedManuscriptKernelGovernedPopulationTheorem.provesEndpointBound
+#print axioms V2.ManuscriptKernelTransfer.nonempty_importedManuscriptPopulationTheorem_iff_endpointBound
 
 end SunflowerAASC

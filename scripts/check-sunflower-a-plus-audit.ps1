@@ -52,12 +52,12 @@ if ($prohibitedMatches.Count -gt 0) {
 }
 Write-Host "No live prohibited declarations or placeholders found in Sunflower audit surface."
 
-lake build SunflowerAASC
+lake --no-cache build SunflowerAASC
 if ($LASTEXITCODE -ne 0) {
     throw "Lake build failed for SunflowerAASC."
 }
 foreach ($auditFile in $auditFiles) {
-    lake env lean $auditFile
+    lake --no-cache env lean $auditFile
     if ($LASTEXITCODE -ne 0) {
         throw "Lean audit failed for $auditFile."
     }
