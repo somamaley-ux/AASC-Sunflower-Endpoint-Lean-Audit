@@ -33,6 +33,13 @@ jobs:
           }
           Write-Host "No live prohibited declarations or placeholders found in Sunflower audit surface."
 
+      - name: Prepare short Lake dependency path
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path ".lake\p" | Out-Null
+          $target = (Resolve-Path ".lake\p").Path
+          New-Item -ItemType Junction -Path ".lake\packages" -Target $target | Out-Null
+
       - name: Build Lean audit
         uses: leanprover/lean-action@v1
         with:

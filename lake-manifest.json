@@ -1,5 +1,5 @@
 {"version": "1.1.0",
- "packagesDir": "p",
+ "packagesDir": ".lake/p",
  "packages":
  [{"url":
    "https://github.com/somamaley-ux/non-degenerate-construction-kernel-admissibility.git",

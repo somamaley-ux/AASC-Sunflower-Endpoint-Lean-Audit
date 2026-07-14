@@ -1,5 +1,4 @@
 .lake/
-p/
 *.olean
 *.ilean
 *.c
