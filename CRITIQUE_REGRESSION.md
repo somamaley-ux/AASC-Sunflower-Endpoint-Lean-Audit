@@ -1,87 +1,95 @@
 # Critique Regression
 
-This file records the formal checks that prevent the earlier closure objections
-from reappearing in the release theorem.
+This file records the checks that prevent the continuation-generation defect
+from returning.
+
+## The Global Tower Is Now Source-by-Source
+
+`GeneratedIncidenceTower.NextCoordinate F source` is the subtype of points in
+the next minimal blocker that lie in the current source residual. The theorem
+`nextCoordinate_nonempty` proves this type is inhabited because the next
+blocker hits every edge of the residual family.
+
+The proof therefore distinguishes three types:
+
+- a source blocker coordinate;
+- its residual edge; and
+- a next blocker coordinate incident with that edge.
+
+No residual edge is identified with a blocker point.
+
+## The Rank Step Is Defined
+
+The former described map `delta_j` is absent. `IncidencePath` is a dependent
+inductive type whose constructor stores the source, literal next blocker
+coordinate, incidence proof, and tail path. `incidencePath_nonempty` constructs
+a path for every source by induction.
+
+Branching is retained. A representative chosen later has no role in proving
+the relation inhabited.
+
+## Exclusion Does Not Manufacture Population
+
+`ReachesTerminalCarrier` and `exists_reachesTerminalCarrier` are proved before
+`KernelFaithfulStandingPathBridge` appears. The bridge field
+`standingReach_generated` forces every governed pair to carry a proof of this
+already generated reachability.
+
+AASC can filter or identify generated candidates; it cannot add one.
+
+## Terminal Carrier Is Literal
+
+`IncidencePath.terminalCoordinate` is a point of the minimal blocker of
+`terminalFamily`. The endpoint bridge no longer receives an abstract
+provenance object and assigns it to a proposed seed carrier.
+
+`standingCarrier_reachable` proves that the selected standing carrier is the
+terminal coordinate of a generated path.
+
+## Choice Independence Is Separate From Existence
+
+The bridge fields separate:
+
+- standing-fibre nonemptiness;
+- standing-fibre single-valuedness; and
+- same-carrier source collision closure.
+
+`standingCarrier_choice_independent` uses single-valuedness only after
+nonemptiness. `standingCarrierOf_injective` uses same-carrier type equality and
+quotient finality only after the carrier has been constructed.
+
+## Seed Capacity Is Downstream
+
+The terminal blocker receives the traditional combinatorial seed embedding.
+Only then does `KernelFaithfulStandingPathBridge.seedCode_injective` compose the
+maps and `cell_card_le_4094` count the source cell.
+
+Neither `4094` nor an injective code occurs in path generation or carrier
+collision closure.
 
 ## Kernel Dependency Is Explicit
-
-`NeutralEndpointAdequacy` contains target determinacy, step evaluability,
-act-time finality, and same-regime fidelity. Lean proves it equivalent to the
-existing endpoint adequacy surface. `KernelImportRoute.activation` then
-instantiates the kernel before sameness, comparison, type, or quotient is used.
-
-The formal development therefore does not treat AASC as an optional label
-placed on an independently complete combinatorial construction.
-
-## The Kernel Is An Executable Repository Dependency
 
 The Lake manifest pins
 `non-degenerate-construction-kernel-admissibility` at commit
 `8b51f035f86f781e5eeb18cbaef8b46e74ed4924`.
-`MechanizedKernelImport.endpointConstructionRegime` translates the concrete
-Sunflower endpoint into the upstream `ConstructionRegime`, and
-`mechanizedKernelDependencyCertificate` invokes the upstream kernel package,
-fixed-domain closure, uniqueness, no-derivation-below, no-lower-generator, and
-global-synthesis theorems. Direct `#print axioms` checks show that these imports
-and the bridge are axiom-free.
+`MechanizedKernelImport` translates the fixed Sunflower endpoint into the
+upstream regime and imports kernel necessity, fixed-domain closure, uniqueness,
+no derivation below, and global synthesis.
 
-## Coarse Color Is Not True AASC Type
+## Exact Remaining Boundary
 
-The V2 spine separates finite combinatorial observations from complete
-standing-bearing identity. Same true AASC type collapses as skin under fixed
-target, endpoint, and certificate regime; a surviving distinction must carry a
-finite witness and populate an admissible role. The release does not assume
-that a large coarse-color fibre is a large same-type fibre.
+The release does not yet construct `KernelFaithfulStandingPathBridge F cell`
+from generated data and the imported corpus alone. The manuscript proves the
+four target-specific governance obligations; Lean receives them as structure
+fields and checks their consequences.
 
-## Uniqueness Does Not Manufacture Population
-
-Classifier or endpoint uniqueness is not used to create witnesses. The finite
-profile/role/slot population is supplied explicitly by
-`ImportedManuscriptKernelGovernedPopulationTheorem`, matching manuscript
-Theorem 6.2. Lean uses uniqueness and finality only after this population has
-been supplied.
-
-## Identity Is Preserved Across The Crossing
-
-`ThreePetalLocalManuscriptPopulation.fixedIdentityPopulation` constructs the
-kernel-faithful identity realization. The rank statement
-`identity_preserved_at_rank` checks that the inherited object remains the same
-fixed-target object through deletion and population, rather than being replaced
-by a new coarse observation.
-
-## The Support-Fibre Source Is Derived
-
-The release does not import a support-fibre bound. It derives
-`canonicalSupportFiberBound` from the manuscript population object and then
-constructs `ThreePetalKernelGovernedFiberClosureSource`. The subsequent
-sunflower and endpoint theorems consume that constructed source.
-
-## No Hidden Axiom Or Weakened Restatement
-
-The corpus theorem is an explicit structure parameter, not a Lean `axiom`.
-The audit scans for project-level `axiom`, `unsafe`, `sorry`, and `admit`.
-
-The equivalence
-
-```lean
-Nonempty (ImportedManuscriptKernelGovernedPopulationTheorem alpha) <->
-  ThreePetalSeedBaseEndpointBound alpha
-```
-
-makes the import's strength transparent. The release cannot present the
-population theorem as an independently weaker combinatorial lemma.
+That is a visible internalization boundary, not a project axiom. The audit
+continues to scan for `axiom`, `sorry`, `admit`, and unsafe declarations.
 
 ## Claim Boundary
 
-The mathematical theorem is over non-degenerate determinate finite-family
-regimes. Calling it conditional on an optional AASC regime reverses the stated
-dependency: without determinate identity, comparison, admissible
-transformation, standing-bearing use, reference, and irreversible fixation,
-there is no same theorem subject left to furnish a counterexample.
-
-The Lean theorem parameter
-`ImportedManuscriptKernelGovernedPopulationTheorem` is nevertheless an exact
-formal boundary and is described as such. It represents the manuscript proof
-of target-specific population, not an optional predicate on families. An
-independent Lean reconstruction of that population proof and an AASC-free
-conventional analogue are not claimed.
+The mathematical kernel dependency is not an optional regime condition: it is
+forced by determinate identity, comparison, admissible transformation,
+standing-bearing endpoint use, reference, and finality. The formal claim is
+still bounded exactly: positive path generation is complete in Lean; the
+direct corpus-to-governance constructor is not yet internalized.

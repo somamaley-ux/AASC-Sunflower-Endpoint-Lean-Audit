@@ -1,27 +1,27 @@
 # Release Status
 
-## v0.2.0
+## v0.3.0
 
-`v0.2.0` is the current manuscript-matched Sunflower closure release on
-`main`. It contains:
+`v0.3.0` is the generated-incidence Sunflower release. It contains:
 
-- the minimal transitive Lean spine ending at
-  `sunflower_of_importedManuscriptKernelGovernedClosure`;
-- a pinned dependency on the standalone mechanized kernel and a typed
-  Sunflower-to-kernel construction-regime bridge;
-- the complete base-`8384512` endpoint theorem;
-- a 25-anchor axiom and prohibited-token audit;
-- the synchronized 31-page hybrid manuscript PDF; and
-- the verified 17-entry manuscript source archive.
+- the explicit residual/next-blocker successor relation;
+- source-by-source dependent path population to a literal terminal blocker;
+- a relation-level AASC governance interface that cannot generate paths;
+- checked standing-carrier reachability, choice independence, injectivity, and
+  the `4094` cell bound from that interface;
+- the existing pinned mechanized-kernel dependency and endpoint transfer;
+- a 42-anchor axiom and prohibited-token audit;
+- the synchronized 34-page generated-incidence manuscript; and
+- its hash-verified, clean-rebuilding publication project ZIP.
 
-The release is neither a draft nor a prerelease. Its mathematical claim is the
-complete two-track endpoint closure for non-degenerate determinate regimes;
-AASC is the necessary governance of that subject matter, not an optional
-family condition. Kernel necessity is imported from its own Lean repository.
-The remaining formal boundary is the manuscript's explicit target-specific
-population theorem. This release does not claim that theorem has been
-independently reconstructed from Mathlib or that conventional combinatorics
-already has an AASC-free analogue.
+The mathematical manuscript claims the complete two-track endpoint closure.
+The Lean release is more precisely bounded: positive path generation is fully
+internalized, while the direct corpus-to-`KernelFaithfulStandingPathBridge`
+constructor remains the explicit paper-level boundary.
+
+This is not an optional family-side AASC condition, but neither is it reported
+as an already unparameterized Lean theorem. An AASC-free conventional proof is
+not claimed.
 
 Release assets are stored under `papers/sunflower/` and attached to the GitHub
 release.

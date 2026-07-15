@@ -2,26 +2,46 @@
 
 ## Reviewer Entry
 
-Start with `SunflowerAASC/V2/MechanizedKernelImport.lean`, then read
-`SunflowerAASC/V2/ManuscriptKernelTransfer.lean`. The first file is the actual
-bridge to the pinned standalone kernel repository. The terminal theorems are:
+Start with:
+
+1. `SunflowerAASC/V2/GeneratedIncidenceTower.lean`;
+2. `SunflowerAASC/V2/GeneratedSeedCapacity.lean`;
+3. `SunflowerAASC/V2/MechanizedKernelImport.lean`; and
+4. `SunflowerAASC/V2/ManuscriptKernelTransfer.lean`.
+
+The first file is the constructive repair. Its main anchors are:
+
+- `nextCoordinate_nonempty`;
+- `incidencePath_nonempty`;
+- `exists_reachesTerminalCarrier`; and
+- `terminalFamily_noSunflower`.
+
+They prove that every initial blocker coordinate has a generated path to a
+literal terminal blocker coordinate. This result has no governance,
+population, code, fibre-bound, or endpoint premise.
+
+The second file gives the exact handoff:
+
+- `KernelFaithfulStandingPathBridge.standingCarrier_reachable`;
+- `standingCarrier_choice_independent`;
+- `standingCarrierOf_injective`; and
+- `cell_card_le_4094`.
+
+Inspect the structure fields before the consequences. They make the remaining
+paper-level obligations visible and prevent AASC from being credited with
+positive generation.
+
+## Legacy Endpoint Route
+
+`ManuscriptKernelTransfer.lean` still contains:
 
 - `sunflower_of_importedManuscriptKernelGovernedClosure`;
 - `ImportedManuscriptKernelGovernedPopulationTheorem.provesEndpointBound`; and
 - `nonempty_importedManuscriptPopulationTheorem_iff_endpointBound`.
 
-The first proves an actual three-petal sunflower from a base-`8384512` size
-excess. The second states the complete endpoint. The third audits the exact
-strength of the manuscript import.
-
-Also inspect:
-
-- `mechanizedKernelDependencyCertificate`;
-- `KernelImportRoute.noSameDomainDerivationBelowKernel`; and
-- `KernelImportRoute.governanceEquivalentReplacement_hasKernel`.
-
-These show that kernel necessity and fixed-domain no-lower-governance are
-machine-linked rather than prose-only dependencies.
+These audit every downstream step and the exact endpoint strength of the older
+population import. They are retained for correspondence, not presented as the
+new constructive repair.
 
 ## Validation
 
@@ -29,28 +49,21 @@ machine-linked rather than prose-only dependencies.
 powershell -ExecutionPolicy Bypass -File scripts\check-sunflower-a-plus-audit.ps1
 ```
 
-The script scans all published Lean source, builds the one-module public
-entrypoint, and runs the focused axiom audit in
+The script scans the published Lean tree, builds the public entrypoint, and
+runs the 42 focused axiom checks in
 `Checks/Axiom/SunflowerAPlusAudit.lean`.
 
 ## Claim Discipline
 
 The strongest supported description is:
 
-> A manuscript-faithful Lean mechanization that imports the separately
-> mechanized necessity kernel, instantiates it on the determinate Sunflower
-> endpoint, and verifies the complete closure from the typed manuscript
-> population theorem to a genuine three-petal sunflower and the
-> base-`8384512` endpoint.
+> Lean constructs the complete source-by-source blocker-incidence path
+> relation and literal terminal carriers without AASC, then verifies the
+> choice-independent injective `4094` consequence of an explicit
+> relation-level kernel bridge. The manuscript supplies the
+> sunflower-specific proof of that bridge; its direct corpus-to-Lean
+> constructor remains the stated internalization boundary.
 
-The exact boundary is load-bearing. Kernel necessity is a pinned Lean
-dependency; the corpus proof of the target-specific population theorem remains
-in the manuscript/corpus rather than being independently formalized here. An
-AASC-free conventional analogue is not claimed.
-
-Calling the mathematical theorem conditional on an optional AASC regime is
-incorrect: AASC names the necessity conditions of the determinate objects and
-operations already quantified. Calling the Lean population field a modular
-proof boundary is correct.
-
-No other Lean-side closure source remains uninstantiated after that import.
+Do not describe the path theorem as conditional. Do not describe the full
+corpus-to-bridge theorem as already unparameterized in Lean. Do not call the
+mathematical kernel dependency an optional family predicate.

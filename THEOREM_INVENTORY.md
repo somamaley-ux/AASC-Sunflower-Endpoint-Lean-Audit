@@ -24,6 +24,51 @@ the load-bearing anchors rather than every helper declaration.
 - `V2.PopulationInheritance.no_threePetal_denseCountercase_through_seedReflectedCutoff`:
   excludes the dense countercase through rank `8384511`.
 
+## Selected-Coordinate Reduction
+
+- `V2.SelectedCoordinateReduction.family_card_le_k_mul_residualFamily`:
+  bounds the source family through its private residual family.
+- `V2.SelectedCoordinateReduction.residualLiftInterference_of_noSunflower`:
+  exposes the outgoing-cross obstruction to a naive residual lift.
+- `V2.SelectedCoordinateReduction.hasSunflower_or_outgoingCross_of_residualFamily`:
+  gives the concrete sunflower/outgoing-cross alternative.
+- `V2.SelectedCoordinateReduction.residualFamily_noSunflower_of_noOutgoingCross`:
+  transports the no-sunflower countercase under the stated cross exclusion.
+
+## Generated Incidence Tower
+
+- `V2.GeneratedIncidenceTower.NextCoordinate`:
+  is the subtype of next-blocker points lying in the current private residual.
+- `V2.GeneratedIncidenceTower.nextCoordinate_nonempty`:
+  proves every successor subtype is inhabited because the next blocker hits
+  every residual edge.
+- `V2.GeneratedIncidenceTower.IncidencePath`:
+  retains the complete dependent source-to-cutoff path data.
+- `V2.GeneratedIncidenceTower.incidencePath_nonempty`:
+  constructs a path for every initial blocker coordinate.
+- `V2.GeneratedIncidenceTower.ReachesTerminalCarrier`:
+  defines the source-to-literal-terminal-carrier relation.
+- `V2.GeneratedIncidenceTower.exists_reachesTerminalCarrier`:
+  proves every reachability left fibre is nonempty.
+- `V2.GeneratedIncidenceTower.terminalFamily_noSunflower`:
+  preserves the no-sunflower countercase through the whole tower.
+
+## Generated Seed Capacity
+
+- `V2.GeneratedSeedCapacity.KernelFaithfulStandingPathBridge`:
+  isolates generatedness, standing-fibre population, single-valuedness,
+  same-carrier AASC type, and quotient finality.
+- `V2.GeneratedSeedCapacity.KernelFaithfulStandingPathBridge.standingCarrier_reachable`:
+  proves the governed carrier is the endpoint of a generated path.
+- `V2.GeneratedSeedCapacity.KernelFaithfulStandingPathBridge.standingCarrier_choice_independent`:
+  proves independence from a standing witness or route representative.
+- `V2.GeneratedSeedCapacity.KernelFaithfulStandingPathBridge.standingCarrierOf_injective`:
+  excludes a same-carrier source collision.
+- `V2.GeneratedSeedCapacity.KernelFaithfulStandingPathBridge.cell_card_le_4094`:
+  composes the terminal carrier injection with the traditional seed embedding.
+- `V2.GeneratedSeedCapacity.nonempty_endpointRoleBridge_iff_cellCarrierOf_injective`:
+  exposes the exact strength of the older direct endpoint-role bridge.
+
 ## Type And Identity Population
 
 - `V2.FixedIdentityPopulation.nonempty_sameSideExhaustion_iff_fixedIdentityRealization`:
@@ -92,8 +137,9 @@ the load-bearing anchors rather than every helper declaration.
 
 ## Public Entrypoints
 
-- `SunflowerAASC.lean`: imports only the terminal manuscript closure module.
+- `SunflowerAASC.lean`: imports the selected-coordinate reduction, generated
+  seed-capacity bridge, and terminal manuscript transfer.
 - `Checks/Axiom/SunflowerAPlusAudit.lean`: focused `#print axioms` audit for
-  25 imported-kernel and load-bearing closure anchors.
+  42 generated-combinatorial, imported-kernel, and closure anchors.
 - `scripts/check-sunflower-a-plus-audit.ps1`: prohibited-token scan, terminal
   build, and focused audit runner.

@@ -1,172 +1,159 @@
-# Three-Petal Sunflower Endpoint: Combinatorics and Structural Closure
+# Three-Petal Sunflower Endpoint: Generated Incidence and Structural Closure
 
 [![Lean audit](https://github.com/somamaley-ux/AASC-Sunflower-Endpoint-Lean-Audit/actions/workflows/lean.yml/badge.svg)](https://github.com/somamaley-ux/AASC-Sunflower-Endpoint-Lean-Audit/actions/workflows/lean.yml)
 
-This repository contains the clean Lean proof spine accompanying **Two-Track
-Closure for the Three-Petal Sunflower Endpoint**. It is first a finite
-combinatorics project. The combinatorial track builds the carrier, reductions,
-counting bounds, inheritance machinery, and final three-petal sunflower. At
-one residual high-rank obstruction, the proof hands off to AASC structural
-closure, then returns to the combinatorial endpoint.
+This repository is the Lean companion to **Two-Track Closure for the
+Three-Petal Sunflower Endpoint: Generated Blocker-Incidence Paths and
+Kernel-Governed Seed Capacity**. The finite combinatorial construction is the
+foreground proof track. AASC enters only after combinatorics has populated the
+terminal candidate relation.
 
 ## Proof at a Glance
 
-1. **Combinatorial generation and reduction.** Core/link/matching analysis,
-   blocker carriers, private witnesses, rank deletion, finite tensor profiles,
-   and low-to-high-rank inheritance reduce a dense countercase to an oversized
-   canonical support fibre.
-2. **AASC structural closeout.** AASC supplies no competing construction and
-   no numerical input. It excludes the residual fibre by fixed-domain role
-   exhaustion and impossibility. This handoff is available because the
-   Admissibility, Standing, Reference, and Irreversibility conditions identified
-   by the kernel are necessity conditions of non-degenerate determinacy itself.
-3. **Return to combinatorics.** The resulting fibre bound constructs the
-   rank-uniform source, produces an actual three-petal sunflower, and proves
-   `|F| <= 8384512^n`.
+1. **Finite generation.** Minimal blockers supply private edges and residual
+   families. For a current blocker coordinate `x`, the next candidates are the
+   points in `residual x ∩ nextMinimalBlocker`.
+2. **Path population.** The next blocker hits every residual edge, so every
+   successor set is nonempty. Lean iterates this relation as a dependent path
+   type and proves that every initial coordinate reaches at least one literal
+   terminal blocker coordinate.
+3. **Structural governance.** AASC classifies only those generated reaches. In
+   each fixed comparison cell, the manuscript proves standing-fibre
+   population, choice independence, same-carrier complete-type equality, and
+   collision impossibility.
+4. **Return to finite combinatorics.** The unique standing carrier map embeds a
+   cell into the terminal blocker. The traditional seed theorem embeds that
+   blocker into `Fin 4094`; the existing finite-code and link machinery yields
+   the base-`8384512` endpoint.
 
-The handoff is therefore not from combinatorics to an optional interpretation.
-It is from generative finite combinatorics to a structural closure theorem
-whose applicability is already forced by the determinate identity,
-comparison, deletion, inheritance, and endpoint used in the combinatorial
-argument.
+No Hall matching, canonical successor, residual-to-coordinate identification,
+seed constructor atlas, or universal numerical role registry is used.
 
 ## Result and Scope
 
-> The manuscript's two-track proof establishes the three-petal endpoint for
-> every non-degenerate determinate finite uniform-family regime. The
-> combinatorial track performs the constructive and quantitative work. The
-> AASC track closes the one surviving structural case through exhaustion and
-> impossibility, under necessity conditions inherent in determinate
-> finite-family reasoning rather than an elective predicate imposed on a
-> subclass of families.
+The manuscript states the endpoint
 
-Lean machine-checks the manuscript-matched transfer from the finite
-profile/role/slot population theorem to a genuine three-petal sunflower and
-the endpoint `|F| <= 8384512^n`.
-
-## Combinatorial Track
-
-The checked development formalizes the following combinatorial spine:
-
-- concrete finite uniform families, cores, links, matching petals, and raw
-  blocker bounds;
-- private-witness reduction and deletion-compatible rank projection;
-- the traditional seed cutoff `2047`;
-- the finite tensor-profile reservoir `4094`;
-- the refined constraint base `8384512` and controlled range `8384511`;
-- fixed-identity and high-rank population inheritance;
-- the population-or-oversized-support-fibre dichotomy;
-- conversion of the closed fibre bound into a rank-uniform source; and
-- construction of `Concrete.HasSunflower 3 F` and the final endpoint bound.
-
-These are not retrospective labels placed on an AASC proof. They are the
-generative content that supplies the objects and quantitative structure on
-which the final structural exclusion operates.
-
-## Structural Handoff
-
-The separately mechanized kernel dependency is pinned from
-[`non-degenerate-construction-kernel-admissibility`](https://github.com/somamaley-ux/non-degenerate-construction-kernel-admissibility)
-at commit `8b51f035f86f781e5eeb18cbaef8b46e74ed4924`.
-
-`V2.MechanizedKernelImport` translates the concrete endpoint use into that
-repository's `ConstructionRegime` and constructs its kernel package,
-fixed-domain closure packet, fixed-domain uniqueness, no-derivation-below
-result, no-faithful-lower-generator result, and global synthesis certificate.
-The imported kernel theorems and this bridge are axiom-free.
-
-This mechanization identifies why the structural handoff is licensed. Denying
-the kernel does not leave the same determinate combinatorial problem intact;
-it removes or changes the identity, comparison, transformation, reference, or
-endpoint conditions required to state and preserve that problem.
-
-## Lean Closure Spine
-
-The public entrypoint imports one terminal module:
-
-```lean
-import SunflowerAASC.V2.ManuscriptKernelTransfer
+```text
+NoSunflower 3 F -> |F| <= 8384512^n.
 ```
 
-The terminal dependency chain is:
+The kernel handoff is not an elective predicate restricting uniform families.
+The fixed family, identity, comparison, licensed transformation, standing-
+bearing endpoint use, and report finality instantiate the kernel necessities
+of Admissibility, Standing, Reference, and Irreversibility.
 
-1. the concrete combinatorial modules establish the finite carrier,
-   blocker, seed, projection, and inheritance infrastructure;
-2. `population_or_oversizedCanonicalSupportFiber` isolates the residual
-   support-fibre obstruction;
-3. `MechanizedKernelImport.endpointConstructionRegime` maps the already fixed
-   endpoint to the separately mechanized kernel regime;
-4. `mechanizedKernelDependencyCertificate` imports kernel necessity,
-   fixed-domain closure and uniqueness, and no derivation below the kernel;
-5. `KernelImportRoute.activation` and
-   `KernelImportRoute.denialAndStrictWeakeningExhausted` activate and exhaust
-   the structural alternatives;
-6. `ImportedManuscriptKernelGovernedPopulationTheorem` internalizes the
-   manuscript's finite profile/role/slot population conclusion;
-7. `fixedIdentityPopulation` and `canonicalSupportFiberBound` preserve the
-   inherited combinatorial identity and close the residual fibre;
-8. `toKernelGovernedFiberClosureSource` constructs the rank-uniform source;
-9. `sunflower_of_importedManuscriptKernelGovernedClosure` produces an actual
-   `Concrete.HasSunflower 3 F`; and
-10. `provesEndpointBound` proves the complete base-`8384512` endpoint.
+That mathematical dependency claim and the Lean internalization status are
+different questions. This release does not blur them: the generated path tower
+is fully constructed in Lean, while the sunflower-specific corpus proof of the
+relation-level governance bridge remains an explicit structure boundary.
 
-The publish tree contains 28 dependency modules in the transitive closure of
-the terminal theorem, including 23 V2 modules, plus the one-module public root.
-Exploratory branches that do not feed the terminal theorem are excluded.
+## Generated Combinatorial Track
+
+`V2.GeneratedIncidenceTower` formalizes the missing source-by-source step.
+For `source` in the current minimal blocker it defines:
+
+```lean
+NextCoordinate F source =
+  {target in minimalBlocker (residualFamily F) //
+    target.val in residual F source}
+```
+
+The module proves:
+
+- `nextCoordinate_nonempty`: the next blocker meets the current residual;
+- `incidencePath_nonempty`: every source has a dependent path to cutoff;
+- `ReachesTerminalCarrier`: the source-to-terminal relation;
+- `exists_reachesTerminalCarrier`: every left fibre is populated;
+- `terminalFamily_noSunflower`: residualization preserves the countercase; and
+- `terminalCoordinate`: every path ends at a literal terminal blocker point.
+
+All branching is retained. Classical choice is used only downstream to display
+a representative of a relation already proved nonempty.
+
+## Relation-Level Structural Handoff
+
+`V2.GeneratedSeedCapacity.KernelFaithfulStandingPathBridge` begins after path
+population. Its fields state:
+
+- every standing pair is generated reachability;
+- every source has a standing terminal reach;
+- one source has at most one standing terminal carrier;
+- a shared carrier determines one AASC quotient type; and
+- quotient finality returns that equality to literal source identity.
+
+Lean then proves:
+
+- `standingCarrier_reachable`;
+- `standingCarrier_choice_independent`;
+- `standingCarrierOf_injective`;
+- injectivity of the composed seed code; and
+- `cell_card_le_4094`.
+
+AASC supplies no path and no numeral. Combinatorics supplies no endpoint
+collision theorem.
 
 ## Formalization Boundary
 
-The target-specific corpus theorem is represented by the explicit structure
-`ImportedManuscriptKernelGovernedPopulationTheorem`; it is not hidden in a
-Lean `axiom`. The theorem
-`nonempty_importedManuscriptPopulationTheorem_iff_endpointBound` verifies that
-this proof object has exactly endpoint strength.
+The current development does **not** yet construct an unparameterized
+`KernelFaithfulStandingPathBridge` directly from the imported corpus machinery.
+The manuscript proves its sunflower-specific fields; Lean checks their exact
+typed consequences. No support-fibre bound, injective code, one-occupant-per-
+token premise, or endpoint estimate is hidden in the generated path theorem.
 
-The release does not claim that Lean independently reconstructs manuscript
-Theorem 6.2 from Mathlib, or that conventional combinatorics already contains
-an AASC-free analogue of its fixed-domain exhaustion. The first is the stated
-formalization boundary; the second is precisely why the two-track handoff is
-needed. Neither makes kernel governance an optional condition on the
-mathematical theorem's determinate domain.
+The older endpoint-strength boundary
+`ImportedManuscriptKernelGovernedPopulationTheorem` remains in the repository
+for correspondence and downstream audit. The generated-incidence modules now
+isolate the strictly smaller conceptual handoff that a future internalization
+must construct.
+
+The release therefore claims neither an AASC-free conventional proof nor a
+fully unparameterized machine proof of the corpus-to-governance bridge.
 
 ## Main Anchors
 
-- `V2.PopulationInheritance.threePetalTraditionalSeedConstraintBase_eq`
-- `V2.HighRankPopulationInheritance.population_or_oversizedCanonicalSupportFiber`
-- `V2.FixedIdentityPopulation.KernelFaithfulFixedIdentityRealization.identity_preserved_at_rank`
-- `V2.MechanizedKernelImport.mechanizedKernelDependencyCertificate`
-- `V2.ManuscriptKernelTransfer.KernelImportRoute.noSameDomainDerivationBelowKernel`
+- `V2.SelectedCoordinateReduction.family_card_le_k_mul_residualFamily`
+- `V2.GeneratedIncidenceTower.nextCoordinate_nonempty`
+- `V2.GeneratedIncidenceTower.incidencePath_nonempty`
+- `V2.GeneratedIncidenceTower.exists_reachesTerminalCarrier`
+- `V2.GeneratedIncidenceTower.terminalFamily_noSunflower`
+- `V2.GeneratedSeedCapacity.KernelFaithfulStandingPathBridge.standingCarrier_reachable`
+- `V2.GeneratedSeedCapacity.KernelFaithfulStandingPathBridge.standingCarrier_choice_independent`
+- `V2.GeneratedSeedCapacity.KernelFaithfulStandingPathBridge.standingCarrierOf_injective`
+- `V2.GeneratedSeedCapacity.KernelFaithfulStandingPathBridge.cell_card_le_4094`
 - `V2.ManuscriptKernelTransfer.sunflower_of_importedManuscriptKernelGovernedClosure`
-- `V2.ManuscriptKernelTransfer.ImportedManuscriptKernelGovernedPopulationTheorem.provesEndpointBound`
 - `V2.ManuscriptKernelTransfer.nonempty_importedManuscriptPopulationTheorem_iff_endpointBound`
+
+## Kernel Dependency
+
+The standalone mechanized kernel repository is pinned at commit
+`8b51f035f86f781e5eeb18cbaef8b46e74ed4924`.
+`V2.MechanizedKernelImport` constructs its `ConstructionRegime`, kernel
+package, fixed-domain closure, uniqueness, no-derivation-below result, and
+global synthesis certificate for the fixed Sunflower endpoint route.
 
 ## Validation
 
-The release uses Lean `v4.28.0` and Mathlib `v4.28.0`.
+The release uses Lean and Mathlib `v4.28.0`.
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File scripts\check-sunflower-a-plus-audit.ps1
 ```
 
-The audit:
+Verified locally:
 
-- scans `SunflowerAASC/` and `Checks/Axiom/` for live `axiom`, `unsafe`,
-  `sorry`, or `admit` declarations;
-- builds the terminal `SunflowerAASC` target; and
-- runs 25 focused `#print axioms` checks on the combinatorial, imported-kernel,
-  and load-bearing transfer anchors.
-
-The reported dependencies are standard Lean/Mathlib principles such as
-`propext`, `Classical.choice`, and `Quot.sound`, not project-specific axioms.
+- complete build: 1,056 jobs;
+- 42 focused `#print axioms` checks;
+- no live project `axiom`, `sorry`, `admit`, or unsafe declaration; and
+- only standard Lean/Mathlib principles such as `propext`,
+  `Classical.choice`, and `Quot.sound` on the audited anchors.
 
 ## Manuscript
 
-The synchronized manuscript snapshot is under [`papers/sunflower`](papers/sunflower):
+The synchronized publication snapshot is under [`papers/sunflower`](papers/sunflower):
 
-- `Two_Track_Closure_for_the_Three_Petal_Sunflower_Endpoint.pdf`
-- `Two_Track_Closure_for_the_Three_Petal_Sunflower_Endpoint_Source.zip`
+- `Two_Track_Closure_for_the_Three_Petal_Sunflower_Endpoint_Generated_Incidence_Edition.pdf`
+- `Two_Track_Closure_for_the_Three_Petal_Sunflower_Endpoint_Generated_Incidence_Publication_Project.zip`
 
-The manuscript and Lean release use the same two-track boundary: combinatorics
-generates and reduces, AASC excludes the final structurally inadmissible
-alternative, and the checked transfer returns the result to a genuine
-sunflower and the numerical endpoint.
+The 34-page manuscript and its source package use the same dependency order as
+the Lean types: generated incidence first, structural endpoint governance
+second, numerical readout last.
