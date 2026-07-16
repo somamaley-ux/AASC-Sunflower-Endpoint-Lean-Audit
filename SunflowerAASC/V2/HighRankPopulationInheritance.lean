@@ -380,7 +380,7 @@ theorem highRankPopulationInheritance_provesEndpointBound
       sunflower_of_threePetalHighRankPopulationInheritance
         Source F sizeExcess
 
-/-- Endpoint closure can populate the source only by eliminating its premise. -/
+/-- The endpoint bound supplies the reverse direction of the transfer correspondence. -/
 def threePetalHighRankPopulationInheritanceSourceOfEndpointBound
     {alpha : Type}
     [DecidableEq alpha]
@@ -392,8 +392,8 @@ def threePetalHighRankPopulationInheritanceSourceOfEndpointBound
       (Bound (r + 1) F noSunflower) sizeExcess
 
 /--
-No laundering: the remaining dense high-rank population source has exactly the
-strength of the three-petal constant-base endpoint at the checked base.
+Exact correspondence between the dense high-rank population presentation and
+the three-petal constant-base endpoint at the checked base.
 -/
 theorem nonempty_threePetalHighRankPopulationInheritanceSource_iff_endpointBound
     {alpha : Type}

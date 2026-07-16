@@ -546,7 +546,7 @@ noncomputable def denseFixedIdentitySourceOfDenseLoadSource
         Src.exhaust r F noSunflower sizeExcess
 
 /--
-No-laundering at the rank-uniform source boundary: fixed identity population
+Exact-strength correspondence at the rank-uniform source boundary: fixed identity population
 removes duplicate transport premises but is not weaker than bounded population.
 -/
 theorem nonempty_denseFixedIdentitySource_iff_denseLoadSource
@@ -661,7 +661,7 @@ def denseSixLevelAASCExhaustionSourceOfEndpointBound
       (Bound (r + 1) F noSunflower) sizeExcess
 
 /--
-No-laundering theorem: the rank-uniform semantic exhaustion clause is
+Exact-strength theorem: the rank-uniform semantic exhaustion clause is
 logically equivalent to the desired constant-base sunflower endpoint.
 -/
 theorem nonempty_denseSixLevelAASCExhaustionSource_iff_endpointBound

@@ -1,27 +1,61 @@
 # Release Status
 
-## v0.3.0
+## v0.4.0 Integrated Hybrid Closure
 
-`v0.3.0` is the generated-incidence Sunflower release. It contains:
+The release is combinatorics-first in construction and kernel-first in
+structural authority. Lean generates blocker-incidence paths, authentic merge
+witnesses, finite dispositions, reduction structures, and the quantitative
+objects used by the endpoint proof. Because the resulting terminal incidences
+are determinate and non-degenerate, kernel necessity already forces AASC
+governance. Terminal exhaustion and impossibility are consequences of that
+necessity, not an optional second regime.
 
-- the explicit residual/next-blocker successor relation;
-- source-by-source dependent path population to a literal terminal blocker;
-- a relation-level AASC governance interface that cannot generate paths;
-- checked standing-carrier reachability, choice independence, injectivity, and
-  the `4094` cell bound from that interface;
-- the existing pinned mechanized-kernel dependency and endpoint transfer;
-- a 42-anchor axiom and prohibited-token audit;
-- the synchronized 34-page generated-incidence manuscript; and
-- its hash-verified, clean-rebuilding publication project ZIP.
+The synchronized proof order is:
 
-The mathematical manuscript claims the complete two-track endpoint closure.
-The Lean release is more precisely bounded: positive path generation is fully
-internalized, while the direct corpus-to-`KernelFaithfulStandingPathBridge`
-constructor remains the explicit paper-level boundary.
+```text
+positive combinatorial generation
+-> genuine merge disposition
+-> branch discharge and certified terminalization
+-> target-specific five-way witness and reduction-certificate population
+-> necessity-rooted fifth-branch exclusion
+-> four-role identity closeout and fixed identity
+-> support-fibre bound and endpoint transfer
+-> minimal-blocker capacity
+-> one-point-link recurrence
+-> |F| <= (8,384,512)^n
+```
 
-This is not an optional family-side AASC condition, but neither is it reported
-as an already unparameterized Lean theorem. An AASC-free conventional proof is
-not claimed.
+Lean checks the generated combinatorics, triangle regression, coverage
+rigidity, certified terminalization, automatic kernel governance,
+independent-authorizer exclusion, four-role closeout, fixed identity,
+support-fibre bound, and endpoint downstream. The exact manuscript boundary is
+the Sunflower-specific generated five-way collision classification and its
+literal reduction certificates, represented by
+`ImportedManuscriptKernelGovernedPopulationTheorem` and consumed through
+`ThreePetalLocalManuscriptPopulation.witnessPipeline`.
+
+This is the typed interface between two completed components, not a family-side
+kernel assumption. It does not make AASC governance optional. A wholly
+autonomous conventional replacement of the terminal AASC theorem would be a
+distinct stronger proof architecture, not an unfinished part of this release.
+
+## Verification
+
+- Lean and Mathlib `v4.28.0`
+- Pinned kernel commit
+  `96978f41a08347f36650d3757cfe0ef79bf864f8`
+- 63 project `.lean` files
+- 1,143 successful public-entrypoint build jobs
+- 1,146 successful combined entrypoint-and-audit build jobs
+- 250 focused `#print axioms` checks
+- No project `axiom`, `sorry`, `admit`, or unsafe declaration
+
+## Publication
+
+- 48-page visually verified manuscript
+- 109-file publication archive
+- Complete 63-file Lean source snapshot with source hashes
+- Clean Tectonic build with no LaTeX warnings or unresolved references
 
 Release assets are stored under `papers/sunflower/` and attached to the GitHub
 release.

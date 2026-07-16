@@ -1,5 +1,5 @@
 name = "AASCSunflowerEndpointLeanAudit"
-version = "0.2.0"
+version = "0.4.0"
 defaultTargets = ["SunflowerAASC", "Checks"]
 packagesDir = ".lake/p"
 
@@ -17,4 +17,4 @@ rev = "v4.28.0"
 [[require]]
 name = "NonDegenerateConstructionAndKernelOfAdmissibility"
 git = "https://github.com/somamaley-ux/non-degenerate-construction-kernel-admissibility.git"
-rev = "8b51f035f86f781e5eeb18cbaef8b46e74ed4924"
+rev = "96978f4"

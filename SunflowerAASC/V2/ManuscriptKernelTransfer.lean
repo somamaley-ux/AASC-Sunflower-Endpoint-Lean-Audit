@@ -1,5 +1,6 @@
 import SunflowerAASC.V2.FixedIdentityPopulation
 import SunflowerAASC.V2.HighRankPopulationInheritance
+import SunflowerAASC.V2.KernelNecessityRoleOccupancy
 import SunflowerAASC.V2.MechanizedKernelImport
 
 namespace SunflowerAASC
@@ -10,7 +11,9 @@ open ConstraintMapPopulation
 open FixedIdentityPopulation
 open HighRankPopulationInheritance
 open InternalTensorProfiles
+open KernelNecessityRoleOccupancy
 open PopulationInheritance
+open TerminalRoleOccupancyCloseout
 open MaleyLean.Papers.MinimalConditionsForAdmissibleConstruction
 
 /--
@@ -86,8 +89,8 @@ def KernelImportRoute.kernelPackage
 
 /--
 The kernel route is linked to the separately mechanized fixed-domain kernel
-theorems.  This certificate concerns necessity and denial; population remains
-the target-specific theorem stated later in this module.
+theorems. This certificate concerns necessity and denial; the manuscript's
+target-specific terminal closeout is transferred later in this module.
 -/
 def KernelImportRoute.mechanizedKernelDependency
     {S : SunflowerCarrier}
@@ -99,6 +102,26 @@ def KernelImportRoute.mechanizedKernelDependency
   MechanizedKernelImport.mechanizedKernelDependencyCertificate
     endpointUse route.corpus
 
+/-- The route's complete governance packet, constructed from kernel necessity. -/
+def KernelImportRoute.necessityRootedGovernance
+    {S : SunflowerCarrier}
+    {branch : S.Family -> Prop}
+    {endpointUse : LocalEndpointUse S branch}
+    (route : KernelImportRoute endpointUse) :
+    NecessityRootedEndpointGovernance endpointUse route.corpus :=
+  necessityRootedEndpointGovernance endpointUse route.corpus
+
+/-- Admissibility at the forced endpoint is bivalent, not graded. -/
+theorem KernelImportRoute.admissibilityBivalent
+    {S : SunflowerCarrier}
+    {branch : S.Family -> Prop}
+    {endpointUse : LocalEndpointUse S branch}
+    (route : KernelImportRoute endpointUse) :
+    AdmissibilityBivalent
+      (MechanizedKernelImport.endpointConstructionRegime
+        endpointUse route.corpus) := by
+  exact route.necessityRootedGovernance.admissibilityBivalent
+
 /-- No governance-equivalent same-domain construction lies below the kernel. -/
 theorem KernelImportRoute.noSameDomainDerivationBelowKernel
     {S : SunflowerCarrier}
@@ -108,7 +131,7 @@ theorem KernelImportRoute.noSameDomainDerivationBelowKernel
     NoDerivationBelowKernel
       (MechanizedKernelImport.endpointConstructionRegime
         endpointUse route.corpus) :=
-  route.mechanizedKernelDependency.noDerivationBelow
+  route.necessityRootedGovernance.noDerivationBelowKernel
 
 /-- A same-domain governance-equivalent replacement cannot shed the kernel. -/
 theorem KernelImportRoute.governanceEquivalentReplacement_hasKernel
@@ -135,12 +158,10 @@ theorem KernelImportRoute.activation
     endpointUse.targetAdequate /\
       S.nondegenerate /\
       route.kernelPackage.allRolesHold := by
+  let Governance := route.necessityRootedGovernance
   exact
-    And.intro
-      ((neutralEndpointAdequacy_iff_targetAdequate endpointUse).mp
-        route.neutralAdequacy)
-      (And.intro route.corpus.kernelNecessity.carrierNondegenerate
-        route.kernelPackage.allRolesHold_holds)
+    And.intro Governance.targetAdequacy
+      (And.intro Governance.carrierNondegenerate Governance.localKernelRoles)
 
 /-- The five manuscript outcomes for denial or same-domain weakening. -/
 inductive DenialOrWeakeningDisposition where
@@ -228,10 +249,24 @@ def threePetalKernelImportRoute
     alpha (r + 1) 3 (threePetalRankNondegenerate r)
 
 /--
+The complete necessity-rooted governance packet for the concrete three-petal
+endpoint. It is constructed, not imported: nondegeneracy and determinate
+endpoint use force the kernel and its fixed-domain consequences.
+-/
+def threePetalNecessityRootedGovernance
+    (alpha : Type)
+    [DecidableEq alpha]
+    (r : Nat) :
+    NecessityRootedEndpointGovernance
+      (threePetalNoSunflowerEndpointUse alpha r)
+      (threePetalKernelImportRoute alpha r).corpus :=
+  (threePetalKernelImportRoute alpha r).necessityRootedGovernance
+
+/--
 The local imported AASC packet at one dense high-rank countercase.  Kernel
-activation and fixed-domain factor exhaustion are constructed above.  The two
-genuine corpus obligations are kept visible: a denial-cost ledger and the
-same-side identity exhaustion that rules out a fifth live blocker role.
+activation and fixed-domain factor exhaustion are constructed above. The
+manuscript closeout is exposed by its two typed components: a denial-cost ledger
+and the same-side identity exhaustion that rules out a fifth live blocker role.
 -/
 structure ThreePetalLocalKernelCloseout
     {alpha : Type}
@@ -336,9 +371,9 @@ theorem ThreePetalLocalKernelCloseout.canonicalSupportFiberBound
     closeout.toBoundedLoadExhaustion
 
 /--
-Rank-uniform corpus source for the one open high-rank regime.  Lower-rank
-population and the dense countercase are explicit inputs to the local packet,
-so the import cannot silently assume the final endpoint.
+Rank-uniform form of the manuscript's high-rank AASC closeout. Lower-rank
+population and the dense countercase are explicit inputs to each local packet,
+so the transfer preserves the manuscript's dependency order.
 -/
 structure ThreePetalKernelGovernedFiberClosureSource
     (alpha : Type)
@@ -447,9 +482,11 @@ structure ThreePetalDenseHighRankManuscriptContext
           alpha 3 (by decide) s)
 
 /--
-The exact local output of manuscript Theorem 6.2.  It produces the populated
-finite profile/role/slot identity after kernel activation and denial exhaustion;
-it does not assume the support-fibre inequality or the sunflower endpoint.
+The exact local output of manuscript Theorem 6.2. It supplies a generated
+five-way disposition ledger and literal reduction-minimal branch certificates
+under the automatically constructed kernel-necessity packet. Lean removes the
+independent-authorizer branch, derives the four-role closeout, and then derives
+fixed identity, the support-fibre inequality, and the sunflower endpoint.
 -/
 structure ThreePetalLocalManuscriptPopulation
     {alpha : Type}
@@ -457,24 +494,26 @@ structure ThreePetalLocalManuscriptPopulation
     {r : Nat}
     (F : Concrete.UniformSetFamily alpha (r + 1))
     (noSunflower : Not (Concrete.HasSunflower 3 F)) where
-  denialCost :
+  witnessPipeline :
+    KernelNecessityAnchoredFourRoleWitnessPipeline
+      (tensorProfileBound :=
+        traditionalSeedTensorProfileBound 3 threePetalTraditionalCutoff)
+      (threePetalNecessityRootedGovernance alpha r)
+      F noSunflower
+
+/-- Denial costs are canonical consequences of the role being denied. -/
+def ThreePetalLocalManuscriptPopulation.denialCost
+    {alpha : Type}
+    [DecidableEq alpha]
+    {r : Nat}
+    {F : Concrete.UniformSetFamily alpha (r + 1)}
+    {noSunflower : Not (Concrete.HasSunflower 3 F)}
+    (_population : ThreePetalLocalManuscriptPopulation F noSunflower) :
     KernelRole ->
       KernelDenialCost
-        (Concrete.concreteSunflowerCarrier alpha (r + 1) 3)
-  populateOfKernelCloseout :
-    (threePetalKernelImportRoute alpha r).kernelPackage.allRolesHold ->
-    (forall role : KernelRole,
-      forall factor :
-        (Concrete.concreteSunflowerCarrier alpha (r + 1) 3).StandingFactor,
-      (denialCost role).isRealCost /\
-        denialOrWeakeningDisposition
-            ((threePetalKernelImportRoute alpha r).corpus.fixedDomainClosure.disposition
-              factor) ≠
-          DenialOrWeakeningDisposition.independentSecondAuthority) ->
-      KernelFaithfulFixedIdentityRealization
-        (tensorProfileBound :=
-          traditionalSeedTensorProfileBound 3 threePetalTraditionalCutoff)
-        F noSunflower
+        (Concrete.concreteSunflowerCarrier alpha (r + 1) 3) :=
+  canonicalKernelDenialCost
+    (Concrete.concreteSunflowerCarrier alpha (r + 1) 3)
 
 theorem ThreePetalLocalManuscriptPopulation.denialAndStrictWeakeningExhausted
     {alpha : Type}
@@ -494,7 +533,36 @@ theorem ThreePetalLocalManuscriptPopulation.denialAndStrictWeakeningExhausted
   (threePetalKernelImportRoute alpha r).denialAndStrictWeakeningExhausted
     (population.denialCost role) factor
 
-/-- Apply manuscript Theorem 6.2 in the same dependency order as its proof. -/
+/-- Derive the explicit four-role population and closeout from the pipeline. -/
+def ThreePetalLocalManuscriptPopulation.fourRoleIdentityClosure
+    {alpha : Type}
+    [DecidableEq alpha]
+    {r : Nat}
+    {F : Concrete.UniformSetFamily alpha (r + 1)}
+    {noSunflower : Not (Concrete.HasSunflower 3 F)}
+    (population : ThreePetalLocalManuscriptPopulation F noSunflower) :
+    AASCFourRoleIdentityClosure
+      (tensorProfileBound :=
+        traditionalSeedTensorProfileBound 3 threePetalTraditionalCutoff)
+      F noSunflower :=
+  population.witnessPipeline.fourRoleIdentityClosure
+
+/-- Full audit trace from kernel necessity to the derived fixed identity. -/
+def ThreePetalLocalManuscriptPopulation.kernelNecessityTrace
+    {alpha : Type}
+    [DecidableEq alpha]
+    {r : Nat}
+    {F : Concrete.UniformSetFamily alpha (r + 1)}
+    {noSunflower : Not (Concrete.HasSunflower 3 F)}
+    (population : ThreePetalLocalManuscriptPopulation F noSunflower) :
+    KernelNecessityToFixedIdentityTrace
+      (tensorProfileBound :=
+        traditionalSeedTensorProfileBound 3 threePetalTraditionalCutoff)
+      (threePetalNecessityRootedGovernance alpha r)
+      F noSunflower :=
+  population.witnessPipeline.dependencyTrace
+
+/-- Four-role exhaustion and impossibility mechanically give fixed identity. -/
 def ThreePetalLocalManuscriptPopulation.fixedIdentityPopulation
     {alpha : Type}
     [DecidableEq alpha]
@@ -506,9 +574,7 @@ def ThreePetalLocalManuscriptPopulation.fixedIdentityPopulation
       (tensorProfileBound :=
         traditionalSeedTensorProfileBound 3 threePetalTraditionalCutoff)
       F noSunflower :=
-  population.populateOfKernelCloseout
-    (threePetalKernelImportRoute alpha r).activation.2.2
-    population.denialAndStrictWeakeningExhausted
+  population.fourRoleIdentityClosure.toFixedIdentityRealization
 
 /-- The manuscript population theorem supplies the existing local closeout. -/
 noncomputable def
@@ -522,9 +588,8 @@ noncomputable def
     ThreePetalLocalKernelCloseout F noSunflower where
   denialCost := population.denialCost
   sameSideExhaustionOfKernelCloseout := by
-    intro kernelRoles denialCloseout
-    exact (population.populateOfKernelCloseout
-      kernelRoles denialCloseout).toAASCSameSideIdentityExhaustion
+    intro _kernelRoles _denialCloseout
+    exact population.fourRoleIdentityClosure.toAASCSameSideIdentityExhaustion
 
 /-- Manuscript Theorem 6.2 implies Theorem 6.3's canonical fibre bound. -/
 theorem ThreePetalLocalManuscriptPopulation.canonicalSupportFiberBound
@@ -543,7 +608,9 @@ theorem ThreePetalLocalManuscriptPopulation.canonicalSupportFiberBound
 /--
 The named corpus theorem imported by the manuscript: under its generated
 high-rank hypotheses, kernel-governed population inheritance produces the
-profile/role/slot realization of Theorem 6.2.
+five-way generated disposition and reduction-certificate pipeline of Theorem
+6.2. Kernel necessity removes the independent-authorizer candidate and Lean
+derives the four-role identity closeout.
 -/
 structure ImportedManuscriptKernelGovernedPopulationTheorem
     (alpha : Type)
@@ -601,7 +668,57 @@ theorem ImportedManuscriptKernelGovernedPopulationTheorem.provesEndpointBound
       sunflower_of_importedManuscriptKernelGovernedClosure
         imported F sizeExcess
 
-/-- Endpoint closure can inhabit the imported theorem only by removing its case. -/
+/--
+Audit-facing end-to-end trace. Every dense local countercase is routed from
+kernel necessity through fixed identity and the canonical support-fibre bound,
+and the assembled recurrence proves the global endpoint theorem.
+-/
+structure KernelNecessityAnchoredEndpointClosureTrace
+    (alpha : Type)
+    [DecidableEq alpha]
+    (imported : ImportedManuscriptKernelGovernedPopulationTheorem alpha) :
+    Prop where
+  localDependency :
+    forall r : Nat,
+      forall F : Concrete.UniformSetFamily alpha (r + 1),
+      forall noSunflower : Not (Concrete.HasSunflower 3 F),
+      forall _context :
+        ThreePetalDenseHighRankManuscriptContext F noSunflower,
+      KernelNecessityToFixedIdentityTrace
+        (tensorProfileBound :=
+          traditionalSeedTensorProfileBound 3 threePetalTraditionalCutoff)
+        (threePetalNecessityRootedGovernance alpha r)
+        F noSunflower
+  localFiberBound :
+    forall r : Nat,
+      forall F : Concrete.UniformSetFamily alpha (r + 1),
+      forall noSunflower : Not (Concrete.HasSunflower 3 F),
+      forall _context :
+        ThreePetalDenseHighRankManuscriptContext F noSunflower,
+      CanonicalSupportFiberBound
+        (tensorProfileBound :=
+          traditionalSeedTensorProfileBound 3 threePetalTraditionalCutoff)
+        F noSunflower
+  endpointBound : ThreePetalSeedBaseEndpointBound alpha
+
+/-- Construct the complete kernel-necessity-to-endpoint audit trace. -/
+def
+    ImportedManuscriptKernelGovernedPopulationTheorem.kernelNecessityEndpointTrace
+    {alpha : Type}
+    [DecidableEq alpha]
+    (imported : ImportedManuscriptKernelGovernedPopulationTheorem alpha) :
+    KernelNecessityAnchoredEndpointClosureTrace alpha imported where
+  localDependency := by
+    intro r F noSunflower context
+    exact
+      (imported.population r F noSunflower context).kernelNecessityTrace
+  localFiberBound := by
+    intro r F noSunflower context
+    exact
+      (imported.population r F noSunflower context).canonicalSupportFiberBound
+  endpointBound := imported.provesEndpointBound
+
+/-- The endpoint bound supplies the reverse direction of the exact transfer correspondence. -/
 noncomputable def importedManuscriptPopulationTheoremOfEndpointBound
     {alpha : Type}
     [DecidableEq alpha]
@@ -613,9 +730,10 @@ noncomputable def importedManuscriptPopulationTheoremOfEndpointBound
       Nat.not_lt_of_ge (bound (r + 1) F noSunflower) context.sizeExcess
 
 /--
-No laundering: the imported manuscript population theorem is endpoint-strength,
-although its conclusion is the local profile/role/slot population rather than
-the endpoint itself.
+Exact endpoint correspondence for the manuscript AASC transfer. The local
+four-role identity closure and the combinatorial endpoint are two typed
+presentations of the same closed route, used in the manuscript dependency
+order rather than as independent generators.
 -/
 theorem nonempty_importedManuscriptPopulationTheorem_iff_endpointBound
     {alpha : Type}
